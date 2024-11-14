@@ -1,4 +1,15 @@
 {
-    "BRAND": "Muteni Bank",
-    "WELCOME": "Welcome"
-  }
+  "BRAND": "Muteni Bank",
+  "ABOUT_TITLE": "FACTA/AEOI Form",
+  "ABOUT_SUBTITLE": "What is this form for ?",
+  "ABOUT_TEXT_1": "This form is mandatory. It is used to comply with the requirements of American tax regulations (FACTA), the Organisation for Economic Co-operation and Development (AEOI), and the European Union with which France has signed agreements.",
+  "ABOUT_TEXT_2": "Under FATCA regulations, it is necessary to determine if you are a U.S. citizen or resident.",
+  "ABOUT_TEXT_3": "Under AEOI and EU regulations, it is necessary to identify the list of countries in which you are considered a tax resident.",
+  "ABOUT_FOLLOWING_STEPS": "The steps to follow",
+  "ABOUT_STEP_1": "Complete the online form",
+  "ABOUT_STEP_2": "Verify the entered data",
+  "ABOUT_STEP_3": "Sign electronically",
+  "ABOUT_START_BUTTON": "Start",
+  "ABOUT_LEGAL_DETAILS": "Muteni Bank cannot and must not provide its customers with any advice regarding the declaration of their FATCA or AEOI status. For any request for additional information relating to FACTA or AEOI, you should seek the services of a tax expert."
+
+}

@@ -1,16 +1,15 @@
-import { RouterOutlet } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { TranslationService } from './services/translation.service';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-about',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  imports: [],
+  templateUrl: './about.component.html',
 })
-export class AppComponent implements OnInit {
-  title = 'muteni-bank';
-  constructor(public translationService: TranslationService) {}
+export class AboutComponent implements OnInit {
+  // TODO : REFACTO DUPLICATE CODE
+  constructor(private translationService: TranslationService) {}
 
   ngOnInit() {
     this.translationService.loadTranslations('fr').subscribe();
