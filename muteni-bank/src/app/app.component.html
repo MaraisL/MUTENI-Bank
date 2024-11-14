@@ -1,9 +1,16 @@
 <main class="main">
-  <nav class="p-6 mb-4 w-100 bg-primary-brand shadow-lg">
+  <nav class="p-6 mb-4 w-100 bg-primary-brand shadow-lg flex justify-between align-middle">
     <h1 class="font-sans text-4xl font-bold text-secondary-brand">
-      <a href="#">Munteni Bank</a>
+      <a href="#">{{ getTranslation('BRAND') }}</a>
     </h1>
+    <div class="flex align-middle gap-2">
+      <button (click)="switchLanguage('en')"><img class="h-8" src="en-flag.svg" alt=""></button>
+      <button (click)="switchLanguage('fr')"><img class="h-8" src="fr-flag.svg" alt=""></button>
+    </div>
   </nav>
+  <div>
+
+  </div>
   <div class="content">
     <router-outlet />
   </div>
