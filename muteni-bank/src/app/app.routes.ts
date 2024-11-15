@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from './components/about/about.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { MultiStepFormComponent } from './components/multi-step-form/multi-step-form.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'about', pathMatch: 'full' },
-  { path: 'about', component: AboutComponent },
+  { path: '', redirectTo: 'profil', pathMatch: 'full' },
+  { path: 'profil', component: ProfilComponent },
+  { path: 'facta-aeoi-form', component: MultiStepFormComponent },
 ];

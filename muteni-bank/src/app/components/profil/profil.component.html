@@ -24,39 +24,40 @@
         </button>
         <div>
           <h2 class="uppercase text-2xl">
-            {{ getTranslation('ABOUT_TITLE') }}
+            {{ getTranslation('PROFIL_TITLE') }}
           </h2>
-          <h3 class="text-xl">{{ getTranslation('ABOUT_SUBTITLE') }}</h3>
+          <h3 class="text-xl">{{ getTranslation('PROFIL_SUBTITLE') }}</h3>
         </div>
       </div>
-      <p class="mb-3">{{ getTranslation('ABOUT_TEXT_1') }}</p>
-      <p class="mb-3">{{ getTranslation('ABOUT_TEXT_2') }}</p>
-      <p class="mb-3">{{ getTranslation('ABOUT_TEXT_3') }}</p>
+      <p class="mb-3">{{ getTranslation('PROFIL_TEXT_1') }}</p>
+      <p class="mb-3">{{ getTranslation('PROFIL_TEXT_2') }}</p>
+      <p class="mb-3">{{ getTranslation('PROFIL_TEXT_3') }}</p>
     </div>
-    <img class="-scale-x-100" src="aboutPic.png" alt="" />
+    <img class="-scale-x-100" src="profilPic.png" alt="" />
   </div>
   <div class="mb-10">
     <p class="text-lg font-semibold">
-      {{ getTranslation('ABOUT_FOLLOWING_STEPS') }}
+      {{ getTranslation('PROFIL_FOLLOWING_STEPS') }}
     </p>
     <ul class="flex row font-semibold gap-10">
       <li>
-        <span class="text-4xl p-3">1</span>{{ getTranslation('ABOUT_STEP_1') }}
+        <span class="text-4xl p-3">1</span>{{ getTranslation('PROFIL_STEP_1') }}
       </li>
       <li>
-        <span class="text-4xl p-3">2</span>{{ getTranslation('ABOUT_STEP_2') }}
+        <span class="text-4xl p-3">2</span>{{ getTranslation('PROFIL_STEP_2') }}
       </li>
       <li>
-        <span class="text-4xl p-3">3</span>{{ getTranslation('ABOUT_STEP_3') }}
+        <span class="text-4xl p-3">3</span>{{ getTranslation('PROFIL_STEP_3') }}
       </li>
     </ul>
   </div>
   <div class="flex justify-end">
     <button
+      (click)="goToMultiStepForm()"
       class="py-3 px-6 mr-44 mb-4 bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand"
     >
-      {{ getTranslation('ABOUT_START_BUTTON') }}
+      {{ getTranslation('PROFIL_START_BUTTON') }}
     </button>
   </div>
-  <p class="text-gray-600">{{ getTranslation('ABOUT_LEGAL_DETAILS') }}</p>
+  <p class="text-gray-600">{{ getTranslation('PROFIL_LEGAL_DETAILS') }}</p>
 </div>

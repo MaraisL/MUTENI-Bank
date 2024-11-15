@@ -1,0 +1,14 @@
+<h1>Formulaire Multi-Étapes</h1>
+<ng-container [ngSwitch]="currentStep">
+  <app-step-one *ngSwitchCase="1" (next)="goToNext()"></app-step-one>
+  <app-step-two
+    *ngSwitchCase="2"
+    (next)="finish()"
+    (previous)="goToPrevious()"
+  ></app-step-two>
+  <div *ngSwitchDefault>
+    <h2>Formulaire Terminé !</h2>
+    <pre>{{ formData | json }}</pre>
+    <button (click)="restart()">Recommencer</button>
+  </div>
+</ng-container>

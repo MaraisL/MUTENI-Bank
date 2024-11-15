@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="onNext()">
+  <label>
+    Email :
+    <input formControlName="email" />
+  </label>
+  <button type="button" (click)="previous.emit()">Retour</button>
+  <button type="submit">Terminer</button>
+</form>

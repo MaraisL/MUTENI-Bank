@@ -1,14 +1,14 @@
 {
   "BRAND": "Muteni Banque",
-  "ABOUT_TITLE": "Formulaire FACTA/AEOI",
-  "ABOUT_SUBTITLE": "A quoi sert ce formulaire ?",
-  "ABOUT_TEXT_1": "Ce formulaire est obligatoire. Il sert à répondre aux egigences des réglementations fisclaes américaines (FACTA), de l'Organisation de Coopération et de Développement Economiques (AEOI) et de l'Union Européenne avec lesquels la France a signé des accords.",
-  "ABOUT_TEXT_2": "Dans le cadre de la réglementation FATCA, il est nécéssaire de déterminer si vous êtes citoyen(ne) ou résident(e) américain(e).",
-  "ABOUT_TEXT_3": "Dans le cadre de la réglementation AEOI et UE, il est nécéssaire d'identifier la liste des pays dans lesquels vous êtes considéré(e) comme résident(e) à des fins fiscales.",
-  "ABOUT_FOLLOWING_STEPS": "Les étapes à suivre",
-  "ABOUT_STEP_1": "Compléter le formulaire en ligne",
-  "ABOUT_STEP_2": "Vérifier les données saisies",
-  "ABOUT_STEP_3": "Signer éléctroniquement",
-  "ABOUT_START_BUTTON": "Commencer",
-  "ABOUT_LEGAL_DETAILS": "Muteni Banque ne peut ni ne doit prodiguer à ses clients aucun conseil à la déclaration de leur status FATCA ou AEOI. Pour toute demande d'information complémentaire relative à des éléments FACTA ou AEOI, vous devez soliciter les services d'un fiscaliste"
+  "PROFIL_TITLE": "Formulaire FACTA/AEOI",
+  "PROFIL_SUBTITLE": "A quoi sert ce formulaire ?",
+  "PROFIL_TEXT_1": "Ce formulaire est obligatoire. Il sert à répondre aux egigences des réglementations fisclaes américaines (FACTA), de l'Organisation de Coopération et de Développement Economiques (AEOI) et de l'Union Européenne avec lesquels la France a signé des accords.",
+  "PROFIL_TEXT_2": "Dans le cadre de la réglementation FATCA, il est nécéssaire de déterminer si vous êtes citoyen(ne) ou résident(e) américain(e).",
+  "PROFIL_TEXT_3": "Dans le cadre de la réglementation AEOI et UE, il est nécéssaire d'identifier la liste des pays dans lesquels vous êtes considéré(e) comme résident(e) à des fins fiscales.",
+  "PROFIL_FOLLOWING_STEPS": "Les étapes à suivre",
+  "PROFIL_STEP_1": "Compléter le formulaire en ligne",
+  "PROFIL_STEP_2": "Vérifier les données saisies",
+  "PROFIL_STEP_3": "Signer éléctroniquement",
+  "PROFIL_START_BUTTON": "Commencer",
+  "PROFIL_LEGAL_DETAILS": "Muteni Banque ne peut ni ne doit prodiguer à ses clients aucun conseil à la déclaration de leur status FATCA ou AEOI. Pour toute demande d'information complémentaire relative à des éléments FACTA ou AEOI, vous devez soliciter les services d'un fiscaliste"
 }
