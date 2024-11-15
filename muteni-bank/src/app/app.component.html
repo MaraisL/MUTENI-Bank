@@ -1,16 +1,23 @@
 <main class="main h-screen">
-  <nav class="p-6 mb-4 w-100 bg-primary-brand shadow-lg flex justify-between align-middle">
-    <h1 class="font-sans text-4xl font-bold text-secondary-brand">
-      <a href="#">{{ getTranslation('BRAND') }}</a>
+  <nav
+    class="p-4 mb-4 w-100 bg-teal-50 shadow-lg flex justify-between align-middle"
+  >
+    <h1
+      class="flex gap-4 items-center font-sans text-4xl font-bold text-secondary-brand"
+    >
+      <a class="w-32" ref="#">{{ getTranslation('BRAND') }}</a
+      ><img class="h-16" src="muteni.svg" />
     </h1>
     <div class="flex align-middle gap-2">
-      <button class="hover:scale-110" (click)="switchLanguage('en')"><img class="h-8" src="en-flag.svg" alt=""></button>
-      <button class="hover:scale-110" (click)="switchLanguage('fr')"><img class="h-8" src="fr-flag.svg" alt=""></button>
+      <button class="hover:scale-110" (click)="switchLanguage('en')">
+        <img class="h-8" src="en-flag.svg" alt="" />
+      </button>
+      <button class="hover:scale-110" (click)="switchLanguage('fr')">
+        <img class="h-8" src="fr-flag.svg" alt="" />
+      </button>
     </div>
   </nav>
-  <div>
-
-  </div>
+  <div></div>
   <div class="content">
     <router-outlet />
   </div>
