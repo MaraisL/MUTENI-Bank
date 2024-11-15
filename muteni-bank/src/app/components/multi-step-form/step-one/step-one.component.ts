@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TranslationService } from '../../../services/translation.service';
+
 import { FormDataService } from '../../../services/form-data.service';
 
 @Component({
@@ -14,13 +16,18 @@ export class StepOneComponent {
 
   constructor(
     private fb: FormBuilder,
-    private formDataService: FormDataService
+    private formDataService: FormDataService,
+    private translationService: TranslationService
   ) {
     // Initialise le formulaire avec les données déjà présentes
     const savedData = this.formDataService.getData('stepOne');
     this.form = this.fb.group({
       name: [savedData.name || ''], // Valeur par défaut ou récupérée
     });
+  }
+
+  getTranslation(key: string): string {
+    return this.translationService.translate(key);
   }
 
   onNext() {

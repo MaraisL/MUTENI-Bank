@@ -10,5 +10,14 @@
   "PROFIL_STEP_2": "Verify the entered data",
   "PROFIL_STEP_3": "Sign electronically",
   "PROFIL_START_BUTTON": "Start",
-  "PROFIL_LEGAL_DETAILS": "Muteni Bank cannot and must not provide its customers with any advice regarding the declaration of their FATCA or AEOI status. For any request for additional information relating to FACTA or AEOI, you should seek the services of a tax expert."
+  "PROFIL_LEGAL_DETAILS": "Muteni Bank cannot and should not provide its clients with any advice on declaring their FATCA or AEOI status. For any additional information related to FATCA or AEOI, you should consult a tax advisor.",
+  "FORM_STEP_1_TITLE": "FACTA/AEOI Form",
+  "FORM_STEP_1_SUBTITLE": "Information about the legal representative",
+  "FORM_STEP_1_TEXT_1": "Enter the information of the legal representative",
+  "FORM_STEP_1_TEXT_2": "All fields are mandatory except those marked as optional.",
+  "FORM_STEP_1_LASTNAME_INPUT_LABEL": "Last Name",
+  "FORM_STEP_1_LASTNAME_INPUT_PLACEHOLDER": "Enter the last name...",
+  "FORM_STEP_1_FIRSTNAME_INPUT_LABEL": "First Name",
+  "FORM_STEP_1_FIRSTNAME_INPUT_PLACEHOLDER": "Enter the first name...",
+  "FORM_STEP_1_CONTINUE_BUTTON": "Continue"
 }

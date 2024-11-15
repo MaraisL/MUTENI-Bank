@@ -10,13 +10,22 @@ export class TranslationService {
   private translations: any = {};
   private currentLang: string = 'en';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    // Check if a langage is set
+    const storedLang = localStorage.getItem('currentLang');
+    if (storedLang) {
+      this.currentLang = storedLang;
+    }
+  }
 
   loadTranslations(lang: string): Observable<any> {
     return this.http.get(`/assets/i18n/${lang}.json`).pipe(
       map((translations: any) => {
         this.translations = translations;
         this.currentLang = lang;
+
+        // persist language into local storage
+        localStorage.setItem('currentLang', lang);
         return translations;
       })
     );
