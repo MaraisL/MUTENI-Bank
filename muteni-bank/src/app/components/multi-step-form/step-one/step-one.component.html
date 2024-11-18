@@ -1,67 +1,65 @@
 <div class="container mx-auto px-4 mt-10">
-  <div
-    class="grid md:grid-cols-2 sm:grid-cols-1 sm:gap-4 md:gap-32 items-center"
-  >
+  <div class="mb-4 font-semibold flex gap-4">
+    <button
+      class="pr-2 pl-1 py-1 text-4xl border-2 shadow-lg border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
+    >
+      <svg
+        class=""
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="30 36 18 24 30 12"></polyline>
+      </svg>
+    </button>
     <div>
-      <div class="mb-4 font-semibold flex gap-4">
-        <button
-          class="pr-2 pl-1 py-1 text-4xl border-2 shadow-lg border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
-        >
-          <svg
-            class=""
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            viewBox="0 0 48 48"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="30 36 18 24 30 12"></polyline>
-          </svg>
-        </button>
-        <div>
-          <h2 class="uppercase text-2xl">
-            {{ getTranslation('FORM_STEP_1_TITLE') }}
-          </h2>
-          <h3 class="text-xl">{{ getTranslation('FORM_STEP_1_SUBTITLE') }}</h3>
-        </div>
-      </div>
-      <p class="mb-3">{{ getTranslation('FORM_STEP_1_TEXT_1') }}</p>
-      <p class="mb-3">{{ getTranslation('FORM_STEP_1_TEXT_2') }}</p>
+      <h2 class="uppercase text-2xl">
+        {{ getTranslation('FORM_STEP_1_TITLE') }}
+      </h2>
+      <h3 class="text-xl">{{ getTranslation('FORM_STEP_1_SUBTITLE') }}</h3>
     </div>
   </div>
-  <form [formGroup]="form" (ngSubmit)="onNext()">
-    <label>
+  <app-progress-bar></app-progress-bar>
+
+  <p class="mb-3 text-2xl font-semibold">
+    {{ getTranslation('FORM_STEP_1_TEXT_1') }}
+  </p>
+  <p class="mb-3">{{ getTranslation('FORM_STEP_1_TEXT_2') }}</p>
+
+  <form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
+    <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_1_LASTNAME_INPUT_LABEL') }}
       <input
+        class="border rounded-lg border-black my-3 p-3 font-normal"
         formControlName="name"
         placeholder="{{
           getTranslation('FORM_STEP_1_LASTNAME_INPUT_PLACEHOLDER')
         }}"
       />
     </label>
-    <label>
+    <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_1_FIRSTNAME_INPUT_LABEL') }}
       <input
+        class="border rounded-lg border-black my-3 p-3 font-normal"
         formControlName="name"
         placeholder="{{
           getTranslation('FORM_STEP_1_FIRSTNAME_INPUT_PLACEHOLDER')
         }}"
       />
     </label>
-    <!-- <button
-      class="py-3 px-6 mr-44 mb-4 bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand"
-    >
-      {{ getTranslation('FORM_STEP_1_CONTINUE_BUTTON') }}
-    </button> -->
-    <button
-      type="submit"
-      class="py-3 px-6 mr-44 mb-4 bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand"
-    >
-      {{ getTranslation('FORM_STEP_1_CONTINUE_BUTTON') }}
-    </button>
+    <div class="flex justify-end mt-48">
+      <button
+        type="submit"
+        class="py-3 px-6 mr-44 mb-4 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand"
+      >
+        {{ getTranslation('FORM_STEP_1_CONTINUE_BUTTON') }}
+      </button>
+    </div>
   </form>
 </div>

@@ -1,4 +1,3 @@
-<h1>Formulaire Multi-Étapes</h1>
 <ng-container [ngSwitch]="currentStep">
   <app-step-one *ngSwitchCase="1" (next)="goToNext()"></app-step-one>
   <app-step-two

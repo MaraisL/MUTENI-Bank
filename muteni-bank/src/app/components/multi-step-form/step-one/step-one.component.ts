@@ -3,12 +3,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslationService } from '../../../services/translation.service';
 
 import { FormDataService } from '../../../services/form-data.service';
+import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
 
 @Component({
   standalone: true,
   selector: 'app-step-one',
   templateUrl: './step-one.component.html',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ProgressBarComponent],
 })
 export class StepOneComponent {
   @Output() next = new EventEmitter<void>();
