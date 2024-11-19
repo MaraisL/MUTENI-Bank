@@ -25,12 +25,17 @@ export class MultiStepFormComponent {
   }
 
   finish() {
-    this.formData = this.formDataService.getAllData(); // Récupère toutes les données
+    this.formData = this.formDataService.getAllData(); //Get data
     this.currentStep++;
   }
 
   restart() {
-    this.formDataService.resetData(); // Réinitialise les données
+    this.formDataService.resetData(); // Reset data
     this.currentStep = 1;
+  }
+
+  onNextStep(data: any) {
+    this.formData['stepOne'] = data; // Save data
+    this.goToNext();
   }
 }

@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { TranslationService } from '../../../services/translation.service';
 import { FormDataService } from '../../../services/form-data.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
@@ -20,11 +25,25 @@ export class StepOneComponent {
     private formDataService: FormDataService,
     private translationService: TranslationService
   ) {
-    // Initialise le formulaire avec les données déjà présentes
+    // Init form
     const savedData = this.formDataService.getData('stepOne');
     this.form = this.fb.group({
-      firstName: [savedData.firstName || '', [Validators.required, Validators.maxLength(20), Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/)]], // Ajout des Validators
-      lastName: [savedData.lastName || '', [Validators.required, Validators.maxLength(20), Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/)]], // Ajout des Validators
+      firstName: [
+        savedData.firstName || '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      lastName: [
+        savedData.lastName || '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
     });
   }
 
@@ -34,8 +53,9 @@ export class StepOneComponent {
 
   onNext() {
     if (this.form.valid) {
-      this.formDataService.setData('stepOne', this.form.value); // Sauvegarde
-      this.next.emit();
+      this.formDataService.setData('stepOne', this.form.value); // Save
+      // console.log(this.form.value);
+      this.next.emit(this.form.value); // Send value
     }
   }
 }
