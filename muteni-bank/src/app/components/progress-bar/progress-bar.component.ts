@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   standalone: true,
@@ -7,8 +13,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar.component.css'],
 })
 export class ProgressBarComponent implements OnInit {
-  totalSteps: number = 5;
-  currentStep: number = 1;
+  @Input() totalSteps: number = 5;
+  @Input() currentStep: number = 1;
   progress: number = 0;
 
   ngOnInit() {

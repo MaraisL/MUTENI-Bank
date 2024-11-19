@@ -28,16 +28,16 @@ export class StepOneComponent {
     // Init form
     const savedData = this.formDataService.getData('stepOne');
     this.form = this.fb.group({
-      firstName: [
-        savedData.firstName || '',
+      beneficiaryFirstName: [
+        savedData.beneficiaryFirstName || '',
         [
           Validators.required,
           Validators.maxLength(20),
           Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
         ],
       ],
-      lastName: [
-        savedData.lastName || '',
+      beneficiaryLastName: [
+        savedData.beneficiaryLastName || '',
         [
           Validators.required,
           Validators.maxLength(20),

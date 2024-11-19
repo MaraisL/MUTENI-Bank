@@ -14,7 +14,7 @@
       <h3 class="text-xl">{{ getTranslation('FORM_STEP_1_SUBTITLE') }}</h3>
     </div>
   </div>
-  <app-progress-bar></app-progress-bar>
+  <app-progress-bar [currentStep]="1" [totalSteps]="5"></app-progress-bar>
 
   <p class="mb-3 text-2xl font-semibold">
     {{ getTranslation('FORM_STEP_1_TEXT_1') }}
@@ -24,39 +24,43 @@
   <form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_1_LASTNAME_INPUT_LABEL') }}
-      <input formControlName="lastName" placeholder="{{getTranslation('FORM_STEP_1_LASTNAME_INPUT_PLACEHOLDER')}}"
-        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500': form.get('lastName')?.invalid && (form.get('lastName')?.dirty || form.get('lastName')?.touched), 'border rounded-lg border-black mt-3 mb-1 p-3 font-normal': true}" />
+      <input formControlName="beneficiaryLastName"
+        placeholder="{{getTranslation('FORM_STEP_1_LASTNAME_INPUT_PLACEHOLDER')}}"
+        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500': form.get('beneficiaryLastName')?.invalid && (form.get('beneficiaryLastName')?.dirty || form.get('beneficiaryLastName')?.touched), 'border rounded-lg border-black mt-3 mb-1 p-3 font-normal': true}" />
     </label>
     <div class="h-6">
-      <div *ngIf="form.get('lastName')?.invalid && (form.get('lastName')?.dirty || form.get('lastName')?.touched)"
+      <div
+        *ngIf="form.get('beneficiaryLastName')?.invalid && (form.get('beneficiaryLastName')?.dirty || form.get('beneficiaryLastName')?.touched)"
         class="text-red-500 mb-2">
-        <small *ngIf="form.get('lastName')?.errors?.['required']">
-          {{ getTranslation('FORM_STEP_1_REQUIRED_ERROR')}}
+        <small *ngIf="form.get('beneficiaryLastName')?.errors?.['required']">
+          {{ getTranslation('FORM_REQUIRED_ERROR')}}
         </small>
-        <small *ngIf="form.get('lastName')?.errors?.['maxlength']">
-          {{getTranslation('FORM_STEP_1_MAXLENGTH_ERROR') }}
+        <small *ngIf="form.get('beneficiaryLastName')?.errors?.['maxlength']">
+          {{getTranslation('FORM_MAXLENGTH_ERROR') }}
         </small>
-        <small *ngIf="form.get('lastName')?.errors?.['pattern']">
-          {{ getTranslation('FORM_STEP_1_PATTERN_ERROR')}}
+        <small *ngIf="form.get('beneficiaryLastName')?.errors?.['pattern']">
+          {{ getTranslation('FORM_PATTERN_ERROR')}}
         </small>
       </div>
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_1_FIRSTNAME_INPUT_LABEL') }}
-      <input formControlName="firstName" placeholder="{{getTranslation('FORM_STEP_1_FIRSTNAME_INPUT_PLACEHOLDER')}}"
-        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500': form.get('firstName')?.invalid && (form.get('firstName')?.dirty || form.get('firstName')?.touched), 'border rounded-lg border-black mt-3 p-3 font-normal': true}" />
+      <input formControlName="beneficiaryFirstName"
+        placeholder="{{getTranslation('FORM_STEP_1_FIRSTNAME_INPUT_PLACEHOLDER')}}"
+        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500': form.get('beneficiaryFirstName')?.invalid && (form.get('beneficiaryFirstName')?.dirty || form.get('beneficiaryFirstName')?.touched), 'border rounded-lg border-black mt-3 p-3 font-normal': true}" />
     </label>
     <div class="h-8">
-      <div *ngIf="form.get('firstName')?.invalid && (form.get('firstName')?.dirty || form.get('firstName')?.touched)"
+      <div
+        *ngIf="form.get('beneficiaryFirstName')?.invalid && (form.get('beneficiaryFirstName')?.dirty || form.get('beneficiaryFirstName')?.touched)"
         class="text-red-500 mb-2 max">
-        <small *ngIf="form.get('firstName')?.errors?.['required']">
-          {{ getTranslation('FORM_STEP_1_REQUIRED_ERROR')}}
+        <small *ngIf="form.get('beneficiaryFirstName')?.errors?.['required']">
+          {{ getTranslation('FORM_REQUIRED_ERROR')}}
         </small>
-        <small *ngIf="form.get('firstName')?.errors?.['maxlength']">
-          {{getTranslation('FORM_STEP_1_MAXLENGTH_ERROR') }}
+        <small *ngIf="form.get('beneficiaryFirstName')?.errors?.['maxlength']">
+          {{getTranslation('FORM_MAXLENGTH_ERROR') }}
         </small>
-        <small *ngIf="form.get('firstName')?.errors?.['pattern']">
-          {{ getTranslation('FORM_STEP_1_PATTERN_ERROR')}}
+        <small *ngIf="form.get('beneficiaryFirstName')?.errors?.['pattern']">
+          {{ getTranslation('FORM_PATTERN_ERROR')}}
         </small>
       </div>
     </div>

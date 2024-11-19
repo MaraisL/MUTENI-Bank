@@ -20,7 +20,19 @@
   "FORM_STEP_1_FIRSTNAME_INPUT_LABEL": "Prénom",
   "FORM_STEP_1_FIRSTNAME_INPUT_PLACEHOLDER": "Saisir le prénom...",
   "FORM_STEP_1_CONTINUE_BUTTON": "Continuer",
-  "FORM_STEP_1_MAXLENGTH_ERROR": "La longueur maximale est de 25 caractères.",
-  "FORM_STEP_1_REQUIRED_ERROR": "Ce champ ne peut pas être vide.",
-  "FORM_STEP_1_PATTERN_ERROR": "Les caractères spéciaux ne sont pas autorisés."
+  "FORM_MAXLENGTH_ERROR": "La longueur maximale est de 25 caractères.",
+  "FORM_REQUIRED_ERROR": "Ce champ ne peut pas être vide.",
+  "FORM_PATTERN_ERROR": "Les caractères spéciaux ne sont pas autorisés.",
+  "FORM_STEP_2_TITLE": "Formulaire FACTA/AEOI",
+  "FORM_STEP_2_SUBTITLE": "Les références MUTENI",
+  "FORM_STEP_2_TEXT_1": "Renseigner les informations du défunt",
+  "FORM_STEP_2_TEXT_2": "Tout les champs sont obligatoire sauf ceux indiqués comme étant facultatifs",
+  "FORM_STEP_2_LASTNAME_INPUT_LABEL": "Nom",
+  "FORM_STEP_2_LASTNAME_INPUT_PLACEHOLDER": "Saisir le nom...",
+  "FORM_STEP_2_FIRSTNAME_INPUT_LABEL": "Prénom",
+  "FORM_STEP_2_FIRSTNAME_INPUT_PLACEHOLDER": "Saisir le prénom...",
+  "FORM_STEP_2_BIRTHDATE_INPUT_LABEL": "Date de naissance",
+  "FORM_STEP_2_BIRTHDATE_INPUT_FORMAT": "JJ/MM/AAAA",
+  "FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL": "Numéro client",
+  "FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT": "Veuillez noter que le défunt peut avoir plusieurs numéros client. C'est pourquoi le numéro affiché ici peut être différent de celui présent sur le formulaire reçu par courrier."
 }
