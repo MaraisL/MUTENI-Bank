@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslationService } from '../../../services/translation.service';
-
 import { FormDataService } from '../../../services/form-data.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-step-one',
   templateUrl: './step-one.component.html',
-  imports: [ReactiveFormsModule, ProgressBarComponent],
+  imports: [ReactiveFormsModule, ProgressBarComponent, CommonModule],
 })
 export class StepOneComponent {
-  @Output() next = new EventEmitter<void>();
+  @Output() next = new EventEmitter();
   form: FormGroup;
 
   constructor(
@@ -23,7 +23,8 @@ export class StepOneComponent {
     // Initialise le formulaire avec les données déjà présentes
     const savedData = this.formDataService.getData('stepOne');
     this.form = this.fb.group({
-      name: [savedData.name || ''], // Valeur par défaut ou récupérée
+      firstName: [savedData.firstName || '', [Validators.required, Validators.maxLength(20), Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/)]], // Ajout des Validators
+      lastName: [savedData.lastName || '', [Validators.required, Validators.maxLength(20), Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/)]], // Ajout des Validators
     });
   }
 

@@ -19,5 +19,8 @@
   "FORM_STEP_1_LASTNAME_INPUT_PLACEHOLDER": "Enter the last name...",
   "FORM_STEP_1_FIRSTNAME_INPUT_LABEL": "First Name",
   "FORM_STEP_1_FIRSTNAME_INPUT_PLACEHOLDER": "Enter the first name...",
-  "FORM_STEP_1_CONTINUE_BUTTON": "Continue"
+  "FORM_STEP_1_CONTINUE_BUTTON": "Continue",
+  "FORM_STEP_1_MAXLENGTH_ERROR": "The maximum length is 25 characters.",
+  "FORM_STEP_1_REQUIRED_ERROR": "This field cannot be empty.",
+  "FORM_STEP_1_PATTERN_ERROR": "Special characters are not allowed."
 }

@@ -19,5 +19,8 @@
   "FORM_STEP_1_LASTNAME_INPUT_PLACEHOLDER": "Saisir le nom...",
   "FORM_STEP_1_FIRSTNAME_INPUT_LABEL": "Prénom",
   "FORM_STEP_1_FIRSTNAME_INPUT_PLACEHOLDER": "Saisir le prénom...",
-  "FORM_STEP_1_CONTINUE_BUTTON": "Continuer"
+  "FORM_STEP_1_CONTINUE_BUTTON": "Continuer",
+  "FORM_STEP_1_MAXLENGTH_ERROR": "La longueur maximale est de 25 caractères.",
+  "FORM_STEP_1_REQUIRED_ERROR": "Ce champ ne peut pas être vide.",
+  "FORM_STEP_1_PATTERN_ERROR": "Les caractères spéciaux ne sont pas autorisés."
 }
