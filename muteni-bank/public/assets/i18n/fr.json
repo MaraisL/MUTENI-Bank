@@ -34,5 +34,7 @@
   "FORM_STEP_2_BIRTHDATE_INPUT_LABEL": "Date de naissance",
   "FORM_STEP_2_BIRTHDATE_INPUT_FORMAT": "JJ/MM/AAAA",
   "FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL": "Numéro client",
-  "FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT": "Veuillez noter que le défunt peut avoir plusieurs numéros client. C'est pourquoi le numéro affiché ici peut être différent de celui présent sur le formulaire reçu par courrier."
+  "FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT": "Veuillez noter que le défunt peut avoir plusieurs numéros client. C'est pourquoi le numéro affiché ici peut être différent de celui présent sur le formulaire reçu par courrier.",
+  "FORM_STEP_2_CONTINUE_BUTTON": "Continuer"
+
 }

@@ -100,9 +100,8 @@
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL') }}
-      <input formControlName="defunctClientNumber"
-        placeholder="{{getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT')}}"
-        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500'
+      <p class="font-normal">{{getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT')}}</p>
+      <input formControlName="defunctClientNumber" placeholder="" [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500'
         : form.get('defunctClientNumber')?.invalid && (form.get('defunctClientNumber')?.dirty || form.get('defunctClientNumber')?.touched), 
           'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600'
         : form.get('defunctClientNumber')?.valid && (form.get('defunctClientNumber')?.dirty || form.get('defunctClientNumber')?.touched), 

@@ -9,12 +9,13 @@ import { FormDataService } from '../../../services/form-data.service';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../../services/translation.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
+import { SvgIconComponent } from "../../check-icon/check-icon.component";
 
 @Component({
   standalone: true,
   selector: 'app-step-two',
   templateUrl: './step-two.component.html',
-  imports: [ReactiveFormsModule, CommonModule, ProgressBarComponent],
+  imports: [ReactiveFormsModule, CommonModule, ProgressBarComponent, SvgIconComponent],
 })
 export class StepTwoComponent {
   @Output() next = new EventEmitter<void>();

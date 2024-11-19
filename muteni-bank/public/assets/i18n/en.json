@@ -34,5 +34,6 @@
   "FORM_STEP_2_BIRTHDATE_INPUT_LABEL": "Date of Birth",
   "FORM_STEP_2_BIRTHDATE_INPUT_FORMAT": "DD/MM/YYYY",
   "FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL": "Client Number",
-  "FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT": "Please note that the deceased may have multiple client numbers. Therefore, the number displayed here may differ from the one on the form received by mail."
+  "FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT": "Please note that the deceased may have multiple client numbers. Therefore, the number displayed here may differ from the one on the form received by mail.",
+  "FORM_STEP_2_CONTINUE_BUTTON": "Continue"
 }
