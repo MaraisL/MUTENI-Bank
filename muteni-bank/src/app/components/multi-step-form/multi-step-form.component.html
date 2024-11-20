@@ -5,6 +5,11 @@
     (next)="finish()"
     (previous)="goToPrevious()"
   ></app-step-two>
+  <app-step-three
+    *ngSwitchCase="3"
+    (next)="finish()"
+    (previous)="goToPrevious()"
+  ></app-step-three>
   <div *ngSwitchDefault>
     <h2>Formulaire Terminé !</h2>
     <pre>{{ formData | json }}</pre>

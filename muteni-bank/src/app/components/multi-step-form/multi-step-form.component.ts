@@ -3,12 +3,18 @@ import { StepOneComponent } from './step-one/step-one.component';
 import { StepTwoComponent } from './step-two/step-two.component';
 import { FormDataService } from '../../services/form-data.service';
 import { CommonModule } from '@angular/common';
+import { StepThreeComponent } from './step-three/step-three.component';
 
 @Component({
   standalone: true,
   selector: 'app-multi-step-form',
   templateUrl: './multi-step-form.component.html',
-  imports: [StepOneComponent, StepTwoComponent, CommonModule],
+  imports: [
+    StepOneComponent,
+    StepTwoComponent,
+    StepThreeComponent,
+    CommonModule,
+  ],
 })
 export class MultiStepFormComponent {
   currentStep = 1;

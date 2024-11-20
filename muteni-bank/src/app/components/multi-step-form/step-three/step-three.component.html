@@ -21,26 +21,26 @@
     </button>
     <div>
       <h2 class="uppercase text-2xl">
-        {{ getTranslation('FORM_STEP_2_TITLE') }}
+        {{ getTranslation('FORM_STEP_3_TITLE') }}
       </h2>
-      <h3 class="text-xl">{{ getTranslation('FORM_STEP_2_SUBTITLE') }}</h3>
+      <h3 class="text-xl">{{ getTranslation('FORM_STEP_3_SUBTITLE') }}</h3>
     </div>
   </div>
-  <app-progress-bar [currentStep]="2" [totalSteps]="5"></app-progress-bar>
+  <app-progress-bar [currentStep]="3" [totalSteps]="5"></app-progress-bar>
 
   <p class="mb-3 text-2xl font-semibold">
-    {{ getTranslation('FORM_STEP_2_TEXT_1') }}
+    {{ getTranslation('FORM_STEP_3_TEXT_1') }}
   </p>
-  <p class="mb-3">{{ getTranslation('FORM_STEP_2_TEXT_2') }}</p>
+  <p class="mb-3">{{ getTranslation('FORM_STEP_3_TEXT_2') }}</p>
 
   <form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
-      {{ getTranslation('FORM_STEP_2_LASTNAME_INPUT_LABEL') }}
+      {{ getTranslation('FORM_STEP_3_LASTNAME_INPUT_LABEL') }}
       <div class="flex w-full relative">
         <input
           formControlName="defunctLastName"
           placeholder="{{
-            getTranslation('FORM_STEP_2_LASTNAME_INPUT_PLACEHOLDER')
+            getTranslation('FORM_STEP_3_LASTNAME_INPUT_PLACEHOLDER')
           }}"
           [ngClass]="{
             'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
@@ -85,12 +85,12 @@
       </div>
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
-      {{ getTranslation('FORM_STEP_2_FIRSTNAME_INPUT_LABEL') }}
+      {{ getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_LABEL') }}
       <div class="flex w-full relative">
         <input
           formControlName="defunctFirstName"
           placeholder="{{
-            getTranslation('FORM_STEP_2_FIRSTNAME_INPUT_PLACEHOLDER')
+            getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_PLACEHOLDER')
           }}"
           [ngClass]="{
             'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
@@ -135,13 +135,13 @@
       </div>
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
-      {{ getTranslation('FORM_STEP_2_BIRTHDATE_INPUT_LABEL') }}
+      {{ getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_LABEL') }}
       <div class="flex w-full relative">
         <input
           formControlName="defunctBirthdate"
           type="date"
           placeholder="{{
-            getTranslation('FORM_STEP_2_BIRTHDATE_INPUT_PLACEHOLDER')
+            getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_PLACEHOLDER')
           }}"
           [ngClass]="{
             'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
@@ -186,9 +186,9 @@
       </div>
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
-      {{ getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL') }}
+      {{ getTranslation('FORM_STEP_3_CLIENT_NUMBER_INPUT_LABEL') }}
       <p class="font-normal">
-        {{ getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT') }}
+        {{ getTranslation('FORM_STEP_3_CLIENT_NUMBER_INPUT_SUBTEXT') }}
       </p>
       <div class="flex w-full relative">
         <input
@@ -242,7 +242,7 @@
         class="py-3 px-6 mr-44 mb-4 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer disabled:bg-opacity-50 disabled:hover:scale-100 disabled:hover:bg-opacity-50 disabled:hover:bg-primary-brand disabled:hover:cursor-not-allowed"
         [disabled]="form.invalid"
       >
-        {{ getTranslation('FORM_STEP_2_CONTINUE_BUTTON') }}
+        {{ getTranslation('FORM_STEP_3_CONTINUE_BUTTON') }}
       </button>
     </div>
   </form>
