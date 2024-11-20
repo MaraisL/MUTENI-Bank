@@ -1,10 +1,17 @@
 <ng-container [ngSwitch]="currentStep">
   <app-step-one *ngSwitchCase="1" (next)="onNextStep($event)"></app-step-one>
-  <app-step-two *ngSwitchCase="2" (next)="finish()" (previous)="goToPrevious()"></app-step-two>
+  <app-step-two
+    *ngSwitchCase="2"
+    (next)="finish()"
+    (previous)="goToPrevious()"
+  ></app-step-two>
   <div *ngSwitchDefault>
     <h2>Formulaire Terminé !</h2>
     <pre>{{ formData | json }}</pre>
     <button (click)="restart()">Recommencer</button>
   </div>
 </ng-container>
-<pre class="absolute top-44 right-44 shadow bg-lime-400 bg-opacity-50 rounded p-3 ">{{ formData | json }}</pre>
+<pre
+  class="absolute top-44 right-44 shadow bg-lime-400 bg-opacity-50 rounded p-3"
+  >{{ formData | json }}</pre
+>

@@ -9,13 +9,18 @@ import { TranslationService } from '../../../services/translation.service';
 import { FormDataService } from '../../../services/form-data.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
 import { CommonModule } from '@angular/common';
-import { SvgIconComponent } from "../../check-icon/check-icon.component";
+import { SvgIconComponent } from '../../check-icon/check-icon.component';
 
 @Component({
   standalone: true,
   selector: 'app-step-one',
   templateUrl: './step-one.component.html',
-  imports: [ReactiveFormsModule, ProgressBarComponent, CommonModule, SvgIconComponent],
+  imports: [
+    ReactiveFormsModule,
+    ProgressBarComponent,
+    CommonModule,
+    SvgIconComponent,
+  ],
 })
 export class StepOneComponent {
   @Output() next = new EventEmitter();

@@ -9,13 +9,18 @@ import { FormDataService } from '../../../services/form-data.service';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../../services/translation.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
-import { SvgIconComponent } from "../../check-icon/check-icon.component";
+import { SvgIconComponent } from '../../check-icon/check-icon.component';
 
 @Component({
   standalone: true,
   selector: 'app-step-two',
   templateUrl: './step-two.component.html',
-  imports: [ReactiveFormsModule, CommonModule, ProgressBarComponent, SvgIconComponent],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    ProgressBarComponent,
+    SvgIconComponent,
+  ],
 })
 export class StepTwoComponent {
   @Output() next = new EventEmitter<void>();
@@ -49,7 +54,9 @@ export class StepTwoComponent {
         savedData.defunctBirthdate || '',
         [
           Validators.required,
-          Validators.pattern(/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/),
+          Validators.pattern(
+            /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+          ),
         ],
       ],
       defunctClientNumber: [

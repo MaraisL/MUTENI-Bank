@@ -1,9 +1,20 @@
 <div class="container mx-auto px-4 mt-10">
   <div class="mb-4 font-semibold flex gap-4">
     <button
-      class="pr-2 pl-1 py-1 text-4xl shadow-lg border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand">
-      <svg class="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none"
-        stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      class="pr-2 pl-1 py-1 text-4xl shadow-lg border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
+    >
+      <svg
+        class=""
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <polyline points="30 36 18 24 30 12"></polyline>
       </svg>
     </button>
@@ -24,111 +35,172 @@
   <form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_2_LASTNAME_INPUT_LABEL') }}
-      <input formControlName="defunctLastName"
-        placeholder="{{getTranslation('FORM_STEP_2_LASTNAME_INPUT_PLACEHOLDER')}}" 
-        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500'
-        : form.get('defunctLastName')?.invalid && (form.get('defunctLastName')?.dirty || form.get('defunctLastName')?.touched), 
-          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600'
-        : form.get('defunctLastName')?.valid && (form.get('defunctLastName')?.dirty || form.get('defunctLastName')?.touched),
-          'border rounded-lg border-black mt-3 mb-1 p-3 font-normal'
-        : true}" />
+      <input
+        formControlName="defunctLastName"
+        placeholder="{{
+          getTranslation('FORM_STEP_2_LASTNAME_INPUT_PLACEHOLDER')
+        }}"
+        [ngClass]="{
+          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+            form.get('defunctLastName')?.invalid &&
+            (form.get('defunctLastName')?.dirty ||
+              form.get('defunctLastName')?.touched),
+          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+            form.get('defunctLastName')?.valid &&
+            (form.get('defunctLastName')?.dirty ||
+              form.get('defunctLastName')?.touched),
+          'border rounded-lg border-black mt-3 mb-1 p-3 font-normal': true,
+        }"
+      />
     </label>
     <div class="h-6">
       <div
-        *ngIf="form.get('defunctLastName')?.invalid && (form.get('defunctLastName')?.dirty || form.get('defunctLastName')?.touched)"
-        class="text-red-500 mb-2">
+        *ngIf="
+          form.get('defunctLastName')?.invalid &&
+          (form.get('defunctLastName')?.dirty ||
+            form.get('defunctLastName')?.touched)
+        "
+        class="text-red-500 mb-2"
+      >
         <small *ngIf="form.get('defunctLastName')?.errors?.['required']">
-          {{ getTranslation('FORM_REQUIRED_ERROR')}}
+          {{ getTranslation('FORM_REQUIRED_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctLastName')?.errors?.['maxlength']">
-          {{getTranslation('FORM_MAXLENGTH_ERROR') }}
+          {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctLastName')?.errors?.['pattern']">
-          {{ getTranslation('FORM_PATTERN_ERROR')}}
+          {{ getTranslation('FORM_PATTERN_ERROR') }}
         </small>
       </div>
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_2_FIRSTNAME_INPUT_LABEL') }}
-      <input formControlName="defunctFirstName"
-        placeholder="{{getTranslation('FORM_STEP_2_FIRSTNAME_INPUT_PLACEHOLDER')}}"
-        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500'
-        : form.get('defunctFirstName')?.invalid && (form.get('defunctFirstName')?.dirty || form.get('defunctFirstName')?.touched), 
-          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600'
-        : form.get('defunctFirstName')?.valid && (form.get('defunctFirstName')?.dirty || form.get('defunctFirstName')?.touched), 
-        'border rounded-lg border-black mt-3 p-3 font-normal': true}" />
+      <input
+        formControlName="defunctFirstName"
+        placeholder="{{
+          getTranslation('FORM_STEP_2_FIRSTNAME_INPUT_PLACEHOLDER')
+        }}"
+        [ngClass]="{
+          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+            form.get('defunctFirstName')?.invalid &&
+            (form.get('defunctFirstName')?.dirty ||
+              form.get('defunctFirstName')?.touched),
+          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+            form.get('defunctFirstName')?.valid &&
+            (form.get('defunctFirstName')?.dirty ||
+              form.get('defunctFirstName')?.touched),
+          'border rounded-lg border-black mt-3 p-3 font-normal': true,
+        }"
+      />
     </label>
     <div class="h-8">
       <div
-        *ngIf="form.get('defunctFirstName')?.invalid && (form.get('defunctFirstName')?.dirty || form.get('defunctFirstName')?.touched)"
-        class="text-red-500 mb-2 max">
+        *ngIf="
+          form.get('defunctFirstName')?.invalid &&
+          (form.get('defunctFirstName')?.dirty ||
+            form.get('defunctFirstName')?.touched)
+        "
+        class="text-red-500 mb-2 max"
+      >
         <small *ngIf="form.get('defunctFirstName')?.errors?.['required']">
-          {{ getTranslation('FORM_REQUIRED_ERROR')}}
+          {{ getTranslation('FORM_REQUIRED_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctFirstName')?.errors?.['maxlength']">
-          {{getTranslation('FORM_MAXLENGTH_ERROR') }}
+          {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctFirstName')?.errors?.['pattern']">
-          {{ getTranslation('FORM_PATTERN_ERROR')}}
+          {{ getTranslation('FORM_PATTERN_ERROR') }}
         </small>
       </div>
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_2_BIRTHDATE_INPUT_LABEL') }}
-      <input formControlName="defunctBirthdate" type="date"
-        placeholder="{{getTranslation('FORM_STEP_2_BIRTHDATE_INPUT_PLACEHOLDER')}}"
-        [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500'
-        : form.get('defunctBirthdate')?.invalid && (form.get('defunctBirthdate')?.dirty || form.get('defunctBirthdate')?.touched),
-          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600'
-        : form.get('defunctBirthdate')?.valid && (form.get('defunctBirthdate')?.dirty || form.get('defunctBirthdate')?.touched), 
-          'border rounded-lg border-black mt-3 p-3 font-normal': true}" />
+      <input
+        formControlName="defunctBirthdate"
+        type="date"
+        placeholder="{{
+          getTranslation('FORM_STEP_2_BIRTHDATE_INPUT_PLACEHOLDER')
+        }}"
+        [ngClass]="{
+          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+            form.get('defunctBirthdate')?.invalid &&
+            (form.get('defunctBirthdate')?.dirty ||
+              form.get('defunctBirthdate')?.touched),
+          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+            form.get('defunctBirthdate')?.valid &&
+            (form.get('defunctBirthdate')?.dirty ||
+              form.get('defunctBirthdate')?.touched),
+          'border rounded-lg border-black mt-3 p-3 font-normal': true,
+        }"
+      />
     </label>
     <div class="h-8">
       <div
-        *ngIf="form.get('defunctBirthdate')?.invalid && (form.get('defunctBirthdate')?.dirty || form.get('defunctBirthdate')?.touched)"
-        class="text-red-500 mb-2 max">
+        *ngIf="
+          form.get('defunctBirthdate')?.invalid &&
+          (form.get('defunctBirthdate')?.dirty ||
+            form.get('defunctBirthdate')?.touched)
+        "
+        class="text-red-500 mb-2 max"
+      >
         <small *ngIf="form.get('defunctBirthdate')?.errors?.['required']">
-          {{ getTranslation('FORM_REQUIRED_ERROR')}}
+          {{ getTranslation('FORM_REQUIRED_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctBirthdate')?.errors?.['maxlength']">
-          {{getTranslation('FORM_MAXLENGTH_ERROR') }}
+          {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctBirthdate')?.errors?.['pattern']">
-          {{ getTranslation('FORM_PATTERN_ERROR')}}
+          {{ getTranslation('FORM_PATTERN_ERROR') }}
         </small>
       </div>
     </div>
     <label class="flex flex-col md:w-full lg:w-1/2 font-semibold">
       {{ getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL') }}
-      <p class="font-normal">{{getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT')}}</p>
-      <input formControlName="defunctClientNumber" placeholder="" [ngClass]="{'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500'
-        : form.get('defunctClientNumber')?.invalid && (form.get('defunctClientNumber')?.dirty || form.get('defunctClientNumber')?.touched), 
-          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600'
-        : form.get('defunctClientNumber')?.valid && (form.get('defunctClientNumber')?.dirty || form.get('defunctClientNumber')?.touched), 
-        'border rounded-lg border-black mt-3 p-3 font-normal': true}" />
+      <p class="font-normal">
+        {{ getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_SUBTEXT') }}
+      </p>
+      <input
+        formControlName="defunctClientNumber"
+        placeholder=""
+        [ngClass]="{
+          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+            form.get('defunctClientNumber')?.invalid &&
+            (form.get('defunctClientNumber')?.dirty ||
+              form.get('defunctClientNumber')?.touched),
+          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+            form.get('defunctClientNumber')?.valid &&
+            (form.get('defunctClientNumber')?.dirty ||
+              form.get('defunctClientNumber')?.touched),
+          'border rounded-lg border-black mt-3 p-3 font-normal': true,
+        }"
+      />
     </label>
     <div class="h-8">
       <div
-        *ngIf="form.get('defunctClientNumber')?.invalid && (form.get('defunctClientNumber')?.dirty || form.get('defunctClientNumber')?.touched)"
-        class="text-red-500 mb-2 max">
+        *ngIf="
+          form.get('defunctClientNumber')?.invalid &&
+          (form.get('defunctClientNumber')?.dirty ||
+            form.get('defunctClientNumber')?.touched)
+        "
+        class="text-red-500 mb-2 max"
+      >
         <small *ngIf="form.get('defunctClientNumber')?.errors?.['required']">
-          {{ getTranslation('FORM_REQUIRED_ERROR')}}
+          {{ getTranslation('FORM_REQUIRED_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctClientNumber')?.errors?.['maxlength']">
-          {{getTranslation('FORM_MAXLENGTH_ERROR') }}
+          {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
         </small>
         <small *ngIf="form.get('defunctClientNumber')?.errors?.['pattern']">
-          {{ getTranslation('FORM_PATTERN_ERROR')}}
+          {{ getTranslation('FORM_PATTERN_ERROR') }}
         </small>
       </div>
     </div>
     <div class="flex justify-end">
-      <button type="submit"
-        class="py-3 px-6 mr-44 mb-4 w-fit 
-        bg-primary-brand text-white shadow-md font-bold rounded-3xl 
-        hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer 
-        disabled:bg-opacity-50 disabled:hover:scale-100 disabled:hover:bg-opacity-50 disabled:hover:bg-primary-brand disabled:hover:cursor-not-allowed"
-        [disabled]="form.invalid">
+      <button
+        type="submit"
+        class="py-3 px-6 mr-44 mb-4 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer disabled:bg-opacity-50 disabled:hover:scale-100 disabled:hover:bg-opacity-50 disabled:hover:bg-primary-brand disabled:hover:cursor-not-allowed"
+        [disabled]="form.invalid"
+      >
         {{ getTranslation('FORM_STEP_2_CONTINUE_BUTTON') }}
       </button>
     </div>
