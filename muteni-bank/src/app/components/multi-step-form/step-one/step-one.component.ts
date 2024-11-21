@@ -9,7 +9,7 @@ import { TranslationService } from '../../../services/translation.service';
 import { FormDataService } from '../../../services/form-data.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
 import { CommonModule } from '@angular/common';
-import { SvgIconComponent } from '../../check-icon/check-icon.component';
+import { CheckIconComponent } from '../../check-icon/check-icon.component';
 
 @Component({
   standalone: true,
@@ -19,7 +19,7 @@ import { SvgIconComponent } from '../../check-icon/check-icon.component';
     ReactiveFormsModule,
     ProgressBarComponent,
     CommonModule,
-    SvgIconComponent,
+    CheckIconComponent,
   ],
 })
 export class StepOneComponent {

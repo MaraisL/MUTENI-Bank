@@ -9,7 +9,7 @@ import { FormDataService } from '../../../services/form-data.service';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../../services/translation.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
-import { SvgIconComponent } from '../../check-icon/check-icon.component';
+import { CheckIconComponent } from '../../check-icon/check-icon.component';
 
 @Component({
   standalone: true,
@@ -19,7 +19,7 @@ import { SvgIconComponent } from '../../check-icon/check-icon.component';
     ReactiveFormsModule,
     CommonModule,
     ProgressBarComponent,
-    SvgIconComponent,
+    CheckIconComponent,
   ],
 })
 export class StepThreeComponent {
@@ -34,24 +34,31 @@ export class StepThreeComponent {
   ) {
     const savedData = this.formDataService.getData('stepThree');
     this.form = this.fb.group({
-      defunctFirstName: [
-        savedData.defunctFirstName || '',
+      personalLastName: [
+        savedData.personalLastName || '',
         [
           Validators.required,
           Validators.maxLength(20),
           Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
         ],
       ],
-      defunctLastName: [
-        savedData.defunctLastName || '',
+      personalUsualName: [
+        savedData.personalFirstName || '',
+        [
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      personalFirstName: [
+        savedData.personalFirstName || '',
         [
           Validators.required,
           Validators.maxLength(20),
           Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
         ],
       ],
-      defunctBirthdate: [
-        savedData.defunctBirthdate || '',
+      personalBirthDate: [
+        savedData.personalBirthDate || '',
         [
           Validators.required,
           Validators.pattern(
@@ -59,12 +66,59 @@ export class StepThreeComponent {
           ),
         ],
       ],
-      defunctClientNumber: [
-        savedData.defunctClientNumber || '',
+      personalBirthCity: [
+        savedData.personalBirthCity || '',
         [
           Validators.required,
           Validators.maxLength(20),
-          Validators.pattern(/^[0-9]+$/),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      personalBirthCountry: [
+        savedData.personalBirthCountry || '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      homeAddress: [
+        savedData.homeAddress || '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      homeAdditionalAddress: [
+        savedData.homeAdditionalAddress || '',
+        [
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      homeZIP: [
+        savedData.homeZIP || '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      homeCity: [
+        savedData.homeCity || '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+        ],
+      ],
+      homeCountry: [
+        savedData.homeZIP || '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
         ],
       ],
     });

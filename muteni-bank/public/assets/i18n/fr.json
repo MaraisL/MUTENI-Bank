@@ -49,7 +49,9 @@
   "FORM_STEP_3_BIRTHDATE_INPUT_LABEL": "Date de naissance",
   "FORM_STEP_3_BIRTHDATE_INPUT_FORMAT": "JJ/MM/AAAA",
   "FORM_STEP_3_BIRTH_CITY_INPUT_LABEL": "Ville de naissance",
+  "FORM_STEP_3_BIRTH_CITY_INPUT_PLACEHOLDER": "Saisir votre ville de naissance",
   "FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL": "Pays de naissance",
+  "FORM_STEP_3_BIRTH_COUNTRY_INPUT_PLACEHOLDER": "Saisir votre pays de naissance",
   "FORM_STEP_3_CLIENT_NUMBER_INPUT_LABEL": "Numéro client",
   "FORM_STEP_3_TEXT_3": "Votre domicile",
   "FORM_STEP_3_ADDRESS_INPUT_LABEL": "Adresse de la résidence principale",
@@ -61,6 +63,6 @@
   "FORM_STEP_3_CITY_INPUT_LABEL": "Ville",
   "FORM_STEP_3_CITY_INPUT_PLACEHOLDER": "Saisir votre ville...",
   "FORM_STEP_3_COUNTRY_INPUT_LABEL": "Pays",
-  "FORM_STEP_3_COUNTREY_INPUT_PLACEHOLDER": "Saisir votre pays...",
+  "FORM_STEP_3_COUNTRY_INPUT_PLACEHOLDER": "Saisir votre pays...",
   "FORM_STEP_3_CONTINUE_BUTTON": "Continuer"
 }

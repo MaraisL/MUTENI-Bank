@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './check-icon.component.html',
   imports: [CommonModule],
 })
-export class SvgIconComponent {
+export class CheckIconComponent {
   @Input() color: string = '#22c55e';
 }
