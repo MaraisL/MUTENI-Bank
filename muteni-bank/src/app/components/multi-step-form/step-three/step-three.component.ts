@@ -86,24 +86,17 @@ export class StepThreeComponent {
         savedData.homeAddress || '',
         [
           Validators.required,
-          Validators.maxLength(20),
-          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
+          Validators.maxLength(50),
+          Validators.pattern(/^[A-Za-zÀ-ÿ0-9\s'-]+$/),
         ],
       ],
       homeAdditionalAddress: [
         savedData.homeAdditionalAddress || '',
-        [
-          Validators.maxLength(20),
-          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
-        ],
+        [Validators.maxLength(50), Validators.pattern(/^[A-Za-zÀ-ÿ0-9\s'-]+$/)],
       ],
       homeZIP: [
         savedData.homeZIP || '',
-        [
-          Validators.required,
-          Validators.maxLength(20),
-          Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
-        ],
+        [Validators.required, Validators.pattern(/^\d{5}$/)],
       ],
       homeCity: [
         savedData.homeCity || '',
@@ -126,7 +119,7 @@ export class StepThreeComponent {
 
   onNext() {
     if (this.form.valid) {
-      this.formDataService.setData('stepThree', this.form.value); // Sauvegarde
+      this.formDataService.setData('stepThree', this.form.value);
       this.next.emit();
     }
   }

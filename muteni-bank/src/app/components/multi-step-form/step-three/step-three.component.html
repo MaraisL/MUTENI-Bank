@@ -377,9 +377,7 @@
               <small *ngIf="form.get('homeZIP')?.errors?.['required']">
                 {{ getTranslation('FORM_REQUIRED_ERROR') }}
               </small>
-              <small *ngIf="form.get('homeZIP')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
+              <!-- TODO : ADD SPECIFIQUE ERROR MESSAGE -->
               <small *ngIf="form.get('homeZIP')?.errors?.['pattern']">
                 {{ getTranslation('FORM_PATTERN_ERROR') }}
               </small>
