@@ -1,0 +1,19 @@
+<nav>
+  <ul class="flex mb-4">
+    <li
+      *ngFor="let step of steps | slice: 0 : currentStep + 1; let i = index"
+      (click)="onStepClick(i)"
+    >
+      <span
+        [ngClass]="{
+          'text-primary-brand font-semibold hover:cursor-pointer':
+            i < currentStep,
+          'pr-3': true,
+        }"
+      >
+        {{ getTranslation(step) }}</span
+      >
+      <span *ngIf="i < currentStep" class="pr-3">/</span>
+    </li>
+  </ul>
+</nav>

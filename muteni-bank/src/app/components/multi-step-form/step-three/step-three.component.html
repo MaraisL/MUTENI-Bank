@@ -1,476 +1,608 @@
-<div class="container mx-auto px-4 mt-10">
-  <div class="mb-4 font-semibold flex gap-4">
-    <button (click)="previous.emit()"
-      class="pr-2 pl-1 py-1 text-4xl shadow-lg border-2 border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand">
-      <svg class="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none"
-        stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="30 36 18 24 30 12"></polyline>
-      </svg>
-    </button>
-    <div>
-      <h2 class="uppercase text-2xl">
-        {{ getTranslation('FORM_STEP_3_TITLE') }}
-      </h2>
-      <h3 class="text-xl">{{ getTranslation('FORM_STEP_3_SUBTITLE') }}</h3>
-    </div>
-  </div>
-  <app-progress-bar [currentStep]="3" [totalSteps]="5"></app-progress-bar>
+<div class="mb-4 font-semibold flex gap-4">
+  <button
+    (click)="previous.emit()"
+    class="pr-2 pl-1 py-1 text-4xl shadow-lg border-2 border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
+  >
+    <svg
+      class=""
+      xmlns="http://www.w3.org/2000/svg"
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <polyline points="30 36 18 24 30 12"></polyline>
+    </svg>
+  </button>
   <div>
-    <form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
-      <p class="mb-3">{{ getTranslation('FORM_STEP_3_TEXT_2') }}</p>
-      <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-20">
-        <div>
-          <p class="mb-3 text-2xl font-semibold">
-            {{ getTranslation('FORM_STEP_3_TEXT_1') }}
-          </p>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_LASTNAME_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="personalLastName" placeholder="{{
-            getTranslation('FORM_STEP_3_LASTNAME_INPUT_PLACEHOLDER')
-          }}" [ngClass]="{
-            'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-            form.get('personalLastName')?.invalid &&
-            (form.get('personalLastName')?.dirty ||
-            form.get('personalLastName')?.touched),
-            'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-              form.get('personalLastName')?.valid &&
-              (form.get('personalLastName')?.dirty ||
-                form.get('personalLastName')?.touched),
-                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-              }" />
-              <app-check-icon *ngIf="
-            form.get('personalLastName')?.valid &&
-            (form.get('personalLastName')?.dirty ||
-              form.get('personalLastName')?.touched)
-              " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-          form.get('personalLastName')?.invalid &&
-          (form.get('personalLastName')?.dirty ||
-          form.get('personalLastName')?.touched)
-          " class="text-red-500 mb-2">
-              <small *ngIf="form.get('personalLastName')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalLastName')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalLastName')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
-          </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_USUAL_NAME_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="personalUsualName" placeholder="{{
-            getTranslation('FORM_STEP_3_USUAL_NAME_INPUT_PLACEHOLDER')
-          }}" [ngClass]="{
-            'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-            form.get('personalUsualName')?.invalid &&
-            (form.get('personalUsualName')?.dirty ||
-            form.get('personalUsualName')?.touched),
-            'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-              form.get('personalUsualName')?.valid &&
-              (form.get('personalUsualName')?.dirty ||
-                form.get('personalUsualName')?.touched),
-                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-              }" />
-              <app-check-icon *ngIf="
-            form.get('personalUsualName')?.valid &&
-            (form.get('personalUsualName')?.dirty ||
-              form.get('personalUsualName')?.touched)
-              " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-          form.get('personalUsualName')?.invalid &&
-          (form.get('personalUsualName')?.dirty ||
-          form.get('personalUsualName')?.touched)
-          " class="text-red-500 mb-2">
-              <small *ngIf="form.get('personalUsualName')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalUsualName')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
-          </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="personalFirstName" placeholder="{{
-            getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_PLACEHOLDER')
-          }}" [ngClass]="{
-            'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-            form.get('personalFirstName')?.invalid &&
-              (form.get('personalFirstName')?.dirty ||
-                form.get('personalFirstName')?.touched),
+    <h2 class="uppercase text-2xl">
+      {{ getTranslation('FORM_STEP_3_TITLE') }}
+    </h2>
+    <h3 class="text-xl">{{ getTranslation('FORM_STEP_3_SUBTITLE') }}</h3>
+  </div>
+</div>
+<app-progress-bar [currentStep]="3" [totalSteps]="5"></app-progress-bar>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
+    <p class="mb-3">{{ getTranslation('FORM_STEP_3_TEXT_2') }}</p>
+    <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-20">
+      <div>
+        <p class="mb-3 text-2xl font-semibold">
+          {{ getTranslation('FORM_STEP_3_TEXT_1') }}
+        </p>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_LASTNAME_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="personalLastName"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_LASTNAME_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('personalLastName')?.invalid &&
+                  (form.get('personalLastName')?.dirty ||
+                    form.get('personalLastName')?.touched),
                 'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('personalLastName')?.valid &&
+                  (form.get('personalLastName')?.dirty ||
+                    form.get('personalLastName')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('personalLastName')?.valid &&
+                (form.get('personalLastName')?.dirty ||
+                  form.get('personalLastName')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
+          </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('personalLastName')?.invalid &&
+              (form.get('personalLastName')?.dirty ||
+                form.get('personalLastName')?.touched)
+            "
+            class="text-red-500 mb-2"
+          >
+            <small *ngIf="form.get('personalLastName')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalLastName')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalLastName')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
+          </div>
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_USUAL_NAME_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="personalUsualName"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_USUAL_NAME_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('personalUsualName')?.invalid &&
+                  (form.get('personalUsualName')?.dirty ||
+                    form.get('personalUsualName')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('personalUsualName')?.valid &&
+                  (form.get('personalUsualName')?.dirty ||
+                    form.get('personalUsualName')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('personalUsualName')?.valid &&
+                (form.get('personalUsualName')?.dirty ||
+                  form.get('personalUsualName')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
+          </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('personalUsualName')?.invalid &&
+              (form.get('personalUsualName')?.dirty ||
+                form.get('personalUsualName')?.touched)
+            "
+            class="text-red-500 mb-2"
+          >
+            <small *ngIf="form.get('personalUsualName')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalUsualName')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
+          </div>
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="personalFirstName"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('personalFirstName')?.invalid &&
+                  (form.get('personalFirstName')?.dirty ||
+                    form.get('personalFirstName')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('personalFirstName')?.valid &&
+                  (form.get('personalFirstName')?.dirty ||
+                    form.get('personalFirstName')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
                 form.get('personalFirstName')?.valid &&
                 (form.get('personalFirstName')?.dirty ||
-                form.get('personalFirstName')?.touched),
+                  form.get('personalFirstName')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
+          </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('personalFirstName')?.invalid &&
+              (form.get('personalFirstName')?.dirty ||
+                form.get('personalFirstName')?.touched)
+            "
+            class="text-red-500 mb-2"
+          >
+            <small *ngIf="form.get('personalFirstName')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalFirstName')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalFirstName')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
+          </div>
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="personalBirthDate"
+              type="date"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('personalBirthDate')?.invalid &&
+                  (form.get('personalBirthDate')?.dirty ||
+                    form.get('personalBirthDate')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('personalBirthDate')?.valid &&
+                  (form.get('personalBirthDate')?.dirty ||
+                    form.get('personalBirthDate')?.touched),
                 'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-              }" />
-              <app-check-icon *ngIf="
-            form.get('personalFirstName')?.valid &&
-            (form.get('personalFirstName')?.dirty ||
-            form.get('personalFirstName')?.touched)
-            " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-          form.get('personalFirstName')?.invalid &&
-          (form.get('personalFirstName')?.dirty ||
-          form.get('personalFirstName')?.touched)
-          " class="text-red-500 mb-2">
-              <small *ngIf="form.get('personalFirstName')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalFirstName')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalFirstName')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('personalBirthDate')?.valid &&
+                (form.get('personalBirthDate')?.dirty ||
+                  form.get('personalBirthDate')?.touched)
+              "
+              class="absolute h-6 right-8 top-6"
+            />
           </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="personalBirthDate" type="date" placeholder="{{
-            getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_PLACEHOLDER')
-          }}" [ngClass]="{
-            'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-            form.get('personalBirthDate')?.invalid &&
-            (form.get('personalBirthDate')?.dirty ||
-            form.get('personalBirthDate')?.touched),
-            'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-            form.get('personalBirthDate')?.valid &&
-            (form.get('personalBirthDate')?.dirty ||
-            form.get('personalBirthDate')?.touched),
-            'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-          }" />
-              <app-check-icon *ngIf="
-            form.get('personalBirthDate')?.valid &&
-            (form.get('personalBirthDate')?.dirty ||
-            form.get('personalBirthDate')?.touched)
-            " class="absolute h-6 right-8 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-          form.get('personalBirthDate')?.invalid &&
-          (form.get('personalBirthDate')?.dirty ||
-          form.get('personalBirthDate')?.touched)
-          " class="text-red-500 mb-2">
-              <small *ngIf="form.get('personalBirthDate')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalBirthDate')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalBirthDate')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('personalBirthDate')?.invalid &&
+              (form.get('personalBirthDate')?.dirty ||
+                form.get('personalBirthDate')?.touched)
+            "
+            class="text-red-500 mb-2"
+          >
+            <small *ngIf="form.get('personalBirthDate')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalBirthDate')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalBirthDate')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
           </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_BIRTH_CITY_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="personalBirthCity" placeholder="{{
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_BIRTH_CITY_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="personalBirthCity"
+              placeholder="{{
                 getTranslation('FORM_STEP_3_BIRTH_CITY_INPUT_PLACEHOLDER')
-              }}" [ngClass]="{
-            'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-            form.get('personalBirthCity')?.invalid &&
-            (form.get('personalBirthCity')?.dirty ||
-            form.get('personalBirthCity')?.touched),
-            'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-            form.get('personalBirthCity')?.valid &&
-            (form.get('personalBirthCity')?.dirty ||
-            form.get('personalBirthCity')?.touched),
-            'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-          }" />
-              <app-check-icon *ngIf="
-            form.get('personalBirthCity')?.valid &&
-            (form.get('personalBirthCity')?.dirty ||
-            form.get('personalBirthCity')?.touched)
-            " class="absolute h-6 right-8 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-          form.get('personalBirthCity')?.invalid &&
-          (form.get('personalBirthCity')?.dirty ||
-          form.get('personalBirthCity')?.touched)
-          " class="text-red-500 mb-2 max">
-              <small *ngIf="form.get('personalBirthCity')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalBirthCity')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalBirthCity')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('personalBirthCity')?.invalid &&
+                  (form.get('personalBirthCity')?.dirty ||
+                    form.get('personalBirthCity')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('personalBirthCity')?.valid &&
+                  (form.get('personalBirthCity')?.dirty ||
+                    form.get('personalBirthCity')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('personalBirthCity')?.valid &&
+                (form.get('personalBirthCity')?.dirty ||
+                  form.get('personalBirthCity')?.touched)
+              "
+              class="absolute h-6 right-8 top-6"
+            />
           </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="personalBirthCountry" placeholder="{{
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('personalBirthCity')?.invalid &&
+              (form.get('personalBirthCity')?.dirty ||
+                form.get('personalBirthCity')?.touched)
+            "
+            class="text-red-500 mb-2 max"
+          >
+            <small *ngIf="form.get('personalBirthCity')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalBirthCity')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('personalBirthCity')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
+          </div>
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="personalBirthCountry"
+              placeholder="{{
                 getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_PLACEHOLDER')
-              }}" [ngClass]="{
-            'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-            form.get('personalBirthCountry')?.invalid &&
-            (form.get('personalBirthCountry')?.dirty ||
-            form.get('personalBirthCountry')?.touched),
-            'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-            form.get('personalBirthCountry')?.valid &&
-            (form.get('personalBirthCountry')?.dirty ||
-            form.get('personalBirthCountry')?.touched),
-            'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-          }" />
-              <app-check-icon *ngIf="
-            form.get('personalBirthCountry')?.valid &&
-            (form.get('personalBirthCountry')?.dirty ||
-            form.get('personalBirthCountry')?.touched)
-            " class="absolute h-6 right-8 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-          form.get('personalBirthCountry')?.invalid &&
-          (form.get('personalBirthCountry')?.dirty ||
-          form.get('personalBirthCountry')?.touched)
-          " class="text-red-500 mb-2 max">
-              <small *ngIf="form.get('personalBirthCountry')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalBirthCountry')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('personalBirthCountry')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('personalBirthCountry')?.invalid &&
+                  (form.get('personalBirthCountry')?.dirty ||
+                    form.get('personalBirthCountry')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('personalBirthCountry')?.valid &&
+                  (form.get('personalBirthCountry')?.dirty ||
+                    form.get('personalBirthCountry')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('personalBirthCountry')?.valid &&
+                (form.get('personalBirthCountry')?.dirty ||
+                  form.get('personalBirthCountry')?.touched)
+              "
+              class="absolute h-6 right-8 top-6"
+            />
+          </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('personalBirthCountry')?.invalid &&
+              (form.get('personalBirthCountry')?.dirty ||
+                form.get('personalBirthCountry')?.touched)
+            "
+            class="text-red-500 mb-2 max"
+          >
+            <small
+              *ngIf="form.get('personalBirthCountry')?.errors?.['required']"
+            >
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small
+              *ngIf="form.get('personalBirthCountry')?.errors?.['maxlength']"
+            >
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small
+              *ngIf="form.get('personalBirthCountry')?.errors?.['pattern']"
+            >
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
           </div>
         </div>
-        <div>
-          <p class="mb-3 text-2xl font-semibold">
-            {{ getTranslation('FORM_STEP_3_TEXT_1') }}
-          </p>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_ADDRESS_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="homeAddress" placeholder="{{
-          getTranslation('FORM_STEP_3_ADDRESS_INPUT_PLACEHOLDER')
-        }}" [ngClass]="{
-          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-          form.get('homeAddress')?.invalid &&
-          (form.get('homeAddress')?.dirty ||
-          form.get('homeAddress')?.touched),
-          'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-            form.get('homeAddress')?.valid &&
-            (form.get('homeAddress')?.dirty ||
-              form.get('homeAddress')?.touched),
-              'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-            }" />
-              <app-check-icon *ngIf="
-          form.get('homeAddress')?.valid &&
-          (form.get('homeAddress')?.dirty ||
-            form.get('homeAddress')?.touched)
-            " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-        form.get('homeAddress')?.invalid &&
-        (form.get('homeAddress')?.dirty ||
-        form.get('homeAddress')?.touched)
-        " class="text-red-500 mb-2">
-              <small *ngIf="form.get('homeAddress')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeAddress')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeAddress')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+      </div>
+      <div>
+        <p class="mb-3 text-2xl font-semibold">
+          {{ getTranslation('FORM_STEP_3_TEXT_1') }}
+        </p>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_ADDRESS_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="homeAddress"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_ADDRESS_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('homeAddress')?.invalid &&
+                  (form.get('homeAddress')?.dirty ||
+                    form.get('homeAddress')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('homeAddress')?.valid &&
+                  (form.get('homeAddress')?.dirty ||
+                    form.get('homeAddress')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('homeAddress')?.valid &&
+                (form.get('homeAddress')?.dirty ||
+                  form.get('homeAddress')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
           </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_ADDITIONAL_ADDRESS_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="homeAdditionalAddress" placeholder="{{
-          getTranslation('FORM_STEP_3_ADDITIONAL_ADDRESS_INPUT_PLACEHOLDER')
-        }}" [ngClass]="{
-          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-          form.get('homeAdditionalAddress')?.invalid &&
-            (form.get('homeAdditionalAddress')?.dirty ||
-              form.get('homeAdditionalAddress')?.touched),
-              'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-              form.get('homeAdditionalAddress')?.valid &&
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('homeAddress')?.invalid &&
+              (form.get('homeAddress')?.dirty ||
+                form.get('homeAddress')?.touched)
+            "
+            class="text-red-500 mb-2"
+          >
+            <small *ngIf="form.get('homeAddress')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small *ngIf="form.get('homeAddress')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('homeAddress')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
+          </div>
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_ADDITIONAL_ADDRESS_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="homeAdditionalAddress"
+              placeholder="{{
+                getTranslation(
+                  'FORM_STEP_3_ADDITIONAL_ADDRESS_INPUT_PLACEHOLDER'
+                )
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('homeAdditionalAddress')?.invalid &&
+                  (form.get('homeAdditionalAddress')?.dirty ||
+                    form.get('homeAdditionalAddress')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('homeAdditionalAddress')?.valid &&
+                  (form.get('homeAdditionalAddress')?.dirty ||
+                    form.get('homeAdditionalAddress')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('homeAdditionalAddress')?.valid &&
+                (form.get('homeAdditionalAddress')?.dirty ||
+                  form.get('homeAdditionalAddress')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
+          </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('homeAdditionalAddress')?.invalid &&
               (form.get('homeAdditionalAddress')?.dirty ||
-              form.get('homeAdditionalAddress')?.touched),
-              'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-            }" />
-              <app-check-icon *ngIf="
-          form.get('homeAdditionalAddress')?.valid &&
-          (form.get('homeAdditionalAddress')?.dirty ||
-          form.get('homeAdditionalAddress')?.touched)
-          " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-        form.get('homeAdditionalAddress')?.invalid &&
-        (form.get('homeAdditionalAddress')?.dirty ||
-        form.get('homeAdditionalAddress')?.touched)
-        " class="text-red-500 mb-2 max">
-              <small *ngIf="form.get('homeAdditionalAddress')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeAdditionalAddress')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeAdditionalAddress')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+                form.get('homeAdditionalAddress')?.touched)
+            "
+            class="text-red-500 mb-2 max"
+          >
+            <small
+              *ngIf="form.get('homeAdditionalAddress')?.errors?.['required']"
+            >
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small
+              *ngIf="form.get('homeAdditionalAddress')?.errors?.['maxlength']"
+            >
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small
+              *ngIf="form.get('homeAdditionalAddress')?.errors?.['pattern']"
+            >
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
           </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_ZIP_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="homeZIP" placeholder="{{
-          getTranslation('FORM_STEP_3_ZIP_INPUT_PLACEHOLDER')
-        }}" [ngClass]="{
-          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-          form.get('homeZIP')?.invalid &&
-            (form.get('homeZIP')?.dirty ||
-              form.get('homeZIP')?.touched),
-              'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-              form.get('homeZIP')?.valid &&
-              (form.get('homeZIP')?.dirty ||
-              form.get('homeZIP')?.touched),
-              'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-            }" />
-              <app-check-icon *ngIf="
-          form.get('homeZIP')?.valid &&
-          (form.get('homeZIP')?.dirty ||
-          form.get('homeZIP')?.touched)
-          " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-        form.get('homeZIP')?.invalid &&
-        (form.get('homeZIP')?.dirty ||
-        form.get('homeZIP')?.touched)
-        " class="text-red-500 mb-2 max">
-              <small *ngIf="form.get('homeZIP')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <!-- TODO : ADD SPECIFIQUE ERROR MESSAGE -->
-              <small *ngIf="form.get('homeZIP')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_ZIP_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="homeZIP"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_ZIP_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('homeZIP')?.invalid &&
+                  (form.get('homeZIP')?.dirty || form.get('homeZIP')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('homeZIP')?.valid &&
+                  (form.get('homeZIP')?.dirty || form.get('homeZIP')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('homeZIP')?.valid &&
+                (form.get('homeZIP')?.dirty || form.get('homeZIP')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
           </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_CITY_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="homeCity" placeholder="{{
-          getTranslation('FORM_STEP_3_CITY_INPUT_PLACEHOLDER')
-        }}" [ngClass]="{
-          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-          form.get('homeCity')?.invalid &&
-            (form.get('homeCity')?.dirty ||
-              form.get('homeCity')?.touched),
-              'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-              form.get('homeCity')?.valid &&
-              (form.get('homeCity')?.dirty ||
-              form.get('homeCity')?.touched),
-              'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-            }" />
-              <app-check-icon *ngIf="
-          form.get('homeCity')?.valid &&
-          (form.get('homeCity')?.dirty ||
-          form.get('homeCity')?.touched)
-          " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-        form.get('homeCity')?.invalid &&
-        (form.get('homeCity')?.dirty ||
-        form.get('homeCity')?.touched)
-        " class="text-red-500 mb-2 max">
-              <small *ngIf="form.get('homeCity')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeCity')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeCity')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('homeZIP')?.invalid &&
+              (form.get('homeZIP')?.dirty || form.get('homeZIP')?.touched)
+            "
+            class="text-red-500 mb-2 max"
+          >
+            <small *ngIf="form.get('homeZIP')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <!-- TODO : ADD SPECIFIQUE ERROR MESSAGE -->
+            <small *ngIf="form.get('homeZIP')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
           </div>
-          <label class="flex flex-col font-semibold">
-            {{ getTranslation('FORM_STEP_3_COUNTRY_INPUT_LABEL') }}
-            <div class="flex w-full relative">
-              <input formControlName="homeCountry" placeholder="{{
-          getTranslation('FORM_STEP_3_COUNTRY_INPUT_PLACEHOLDER')
-        }}" [ngClass]="{
-          'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-          form.get('homeCountry')?.invalid &&
-            (form.get('homeCountry')?.dirty ||
-              form.get('homeCountry')?.touched),
-              'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-              form.get('homeCountry')?.valid &&
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_CITY_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="homeCity"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_CITY_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('homeCity')?.invalid &&
+                  (form.get('homeCity')?.dirty ||
+                    form.get('homeCity')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('homeCity')?.valid &&
+                  (form.get('homeCity')?.dirty ||
+                    form.get('homeCity')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('homeCity')?.valid &&
+                (form.get('homeCity')?.dirty || form.get('homeCity')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
+          </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('homeCity')?.invalid &&
+              (form.get('homeCity')?.dirty || form.get('homeCity')?.touched)
+            "
+            class="text-red-500 mb-2 max"
+          >
+            <small *ngIf="form.get('homeCity')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small *ngIf="form.get('homeCity')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('homeCity')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
+          </div>
+        </div>
+        <label class="flex flex-col font-semibold">
+          {{ getTranslation('FORM_STEP_3_COUNTRY_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <input
+              formControlName="homeCountry"
+              placeholder="{{
+                getTranslation('FORM_STEP_3_COUNTRY_INPUT_PLACEHOLDER')
+              }}"
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('homeCountry')?.invalid &&
+                  (form.get('homeCountry')?.dirty ||
+                    form.get('homeCountry')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('homeCountry')?.valid &&
+                  (form.get('homeCountry')?.dirty ||
+                    form.get('homeCountry')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            />
+            <app-check-icon
+              *ngIf="
+                form.get('homeCountry')?.valid &&
+                (form.get('homeCountry')?.dirty ||
+                  form.get('homeCountry')?.touched)
+              "
+              class="absolute h-6 right-4 top-6"
+            />
+          </div>
+        </label>
+        <div class="h-6">
+          <div
+            *ngIf="
+              form.get('homeCountry')?.invalid &&
               (form.get('homeCountry')?.dirty ||
-              form.get('homeCountry')?.touched),
-              'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-            }" />
-              <app-check-icon *ngIf="
-          form.get('homeCountry')?.valid &&
-          (form.get('homeCountry')?.dirty ||
-          form.get('homeCountry')?.touched)
-          " class="absolute h-6 right-4 top-6" />
-            </div>
-          </label>
-          <div class="h-6">
-            <div *ngIf="
-        form.get('homeCountry')?.invalid &&
-        (form.get('homeCountry')?.dirty ||
-        form.get('homeCountry')?.touched)
-        " class="text-red-500 mb-2 max">
-              <small *ngIf="form.get('homeCountry')?.errors?.['required']">
-                {{ getTranslation('FORM_REQUIRED_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeCountry')?.errors?.['maxlength']">
-                {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
-              </small>
-              <small *ngIf="form.get('homeCountry')?.errors?.['pattern']">
-                {{ getTranslation('FORM_PATTERN_ERROR') }}
-              </small>
-            </div>
+                form.get('homeCountry')?.touched)
+            "
+            class="text-red-500 mb-2 max"
+          >
+            <small *ngIf="form.get('homeCountry')?.errors?.['required']">
+              {{ getTranslation('FORM_REQUIRED_ERROR') }}
+            </small>
+            <small *ngIf="form.get('homeCountry')?.errors?.['maxlength']">
+              {{ getTranslation('FORM_MAXLENGTH_ERROR') }}
+            </small>
+            <small *ngIf="form.get('homeCountry')?.errors?.['pattern']">
+              {{ getTranslation('FORM_PATTERN_ERROR') }}
+            </small>
           </div>
         </div>
       </div>
-      <div class="flex justify-end">
-        <button type="submit"
-          class="py-3 px-6 mb-4 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer disabled:bg-opacity-50 disabled:hover:scale-100 disabled:hover:bg-opacity-50 disabled:hover:bg-primary-brand disabled:hover:cursor-not-allowed"
-          [disabled]="form.invalid">
-          {{ getTranslation('FORM_STEP_3_CONTINUE_BUTTON') }}
-        </button>
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="flex justify-end">
+      <button
+        type="submit"
+        class="py-3 px-6 mb-4 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer disabled:bg-opacity-50 disabled:hover:scale-100 disabled:hover:bg-opacity-50 disabled:hover:bg-primary-brand disabled:hover:cursor-not-allowed"
+        [disabled]="form.invalid"
+      >
+        {{ getTranslation('FORM_STEP_3_CONTINUE_BUTTON') }}
+      </button>
+    </div>
+  </form>
+</div>
