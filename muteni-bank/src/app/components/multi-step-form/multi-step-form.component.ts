@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { StepThreeComponent } from './step-three/step-three.component';
 import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { TranslationService } from '../../services/translation.service';
+import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 
 @Component({
   standalone: true,
@@ -17,6 +18,7 @@ import { TranslationService } from '../../services/translation.service';
     StepThreeComponent,
     CommonModule,
     BreadcrumbComponent,
+    ProgressBarComponent,
   ],
 })
 export class MultiStepFormComponent {
@@ -24,6 +26,7 @@ export class MultiStepFormComponent {
     'FORM_STEP_1_BREADCRUMB',
     'FORM_STEP_2_BREADCRUMB',
     'FORM_STEP_3_BREADCRUMB',
+    'FORM_STEP_RECAP_BREADCRUMB',
   ];
 
   currentStep = 0;

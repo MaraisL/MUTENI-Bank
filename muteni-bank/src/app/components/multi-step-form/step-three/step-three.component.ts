@@ -107,7 +107,7 @@ export class StepThreeComponent {
         ],
       ],
       homeCountry: [
-        savedData.homeZIP || '',
+        savedData.homeCountry || '',
         [
           Validators.required,
           Validators.maxLength(20),
