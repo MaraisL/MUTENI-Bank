@@ -7,6 +7,7 @@ import { StepThreeComponent } from './step-three/step-three.component';
 import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { TranslationService } from '../../services/translation.service';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
+import { StepSummaryComponent } from './step-summary/step-summary.component';
 
 @Component({
   standalone: true,
@@ -16,6 +17,7 @@ import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
     StepOneComponent,
     StepTwoComponent,
     StepThreeComponent,
+    StepSummaryComponent,
     CommonModule,
     BreadcrumbComponent,
     ProgressBarComponent,
@@ -26,7 +28,7 @@ export class MultiStepFormComponent {
     'FORM_STEP_1_BREADCRUMB',
     'FORM_STEP_2_BREADCRUMB',
     'FORM_STEP_3_BREADCRUMB',
-    'FORM_STEP_RECAP_BREADCRUMB',
+    'FORM_STEP_SUMMARY_BREADCRUMB',
   ];
 
   currentStep = 0;
@@ -44,6 +46,7 @@ export class MultiStepFormComponent {
   goToPrevious() {
     this.currentStep--;
   }
+
   goToStep(step: number) {
     if (step < this.currentStep) {
       this.currentStep = step;

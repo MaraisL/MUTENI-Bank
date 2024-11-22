@@ -68,13 +68,13 @@
   "FORM_STEP_3_COUNTRY_INPUT_LABEL": "Pays",
   "FORM_STEP_3_COUNTRY_INPUT_PLACEHOLDER": "Saisir votre pays...",
   "FORM_STEP_3_CONTINUE_BUTTON": "Continuer",
-  "FORM_STEP_RECAP_BREADCRUMB": "Récapitulatif",
-  "FORM_STEP_RECAP_TITLE": "Formulaire FACTA/AEOI",
-  "FORM_STEP_RECAP_SUBTITLE": "Récapitulatif",
-  "FORM_STEP_RECAP_TEXT_1": "Avant de valider, veuillez vérifier que l'ensemble des informations saisies correspond à votre situation.",
-  "FORM_STEP_RECAP_CAPTION_1": "Informations du représentant légal",
-  "FORM_STEP_RECAP_CAPTION_2": "Informations du défunt",
-  "FORM_STEP_RECAP_CAPTION_3": "Informations du bénéficiaire",
-  "FORM_STEP_RECAP_CAPTION_4": "Résidence fiscale du bénéficiaire",
-  "FORM_STEP_RECAP_MODIFY": "Modifier"
+  "FORM_STEP_SUMMARY_BREADCRUMB": "Récapitulatif",
+  "FORM_STEP_SUMMARY_TITLE": "Formulaire FACTA/AEOI",
+  "FORM_STEP_SUMMARY_SUBTITLE": "Récapitulatif",
+  "FORM_STEP_SUMMARY_TEXT_1": "Avant de valider, veuillez vérifier que l'ensemble des informations saisies correspond à votre situation.",
+  "FORM_STEP_SUMMARY_CAPTION_1": "Informations du représentant légal",
+  "FORM_STEP_SUMMARY_CAPTION_2": "Informations du défunt",
+  "FORM_STEP_SUMMARY_CAPTION_3": "Informations du bénéficiaire",
+  "FORM_STEP_SUMMARY_CAPTION_4": "Résidence fiscale du bénéficiaire",
+  "FORM_STEP_SUMMARY_MODIFY": "Modifier"
 }

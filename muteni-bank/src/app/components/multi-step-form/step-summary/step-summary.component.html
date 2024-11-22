@@ -1,0 +1,215 @@
+<div>
+  <div class="mb-4 font-semibold flex gap-4">
+    <button
+      (click)="previous.emit()"
+      class="pr-2 pl-1 py-1 text-4xl border-2 shadow-lg border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
+    >
+      <svg
+        class=""
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="30 36 18 24 30 12"></polyline>
+      </svg>
+    </button>
+    <div>
+      <h2 class="uppercase text-2xl">
+        {{ getTranslation('FORM_STEP_SUMMARY_TITLE') }}
+      </h2>
+      <h3 class="text-xl">
+        {{ getTranslation('FORM_STEP_SUMMARY_SUBTITLE') }}
+      </h3>
+    </div>
+  </div>
+  <app-progress-bar [currentStep]="5" [totalSteps]="5"></app-progress-bar>
+  <p>{{ getTranslation('FORM_STEP_SUMMARY_TEXT_1') }}</p>
+  <div class="flex flex-col gap-4 mt-6">
+    <div *ngIf="formData.stepOne" class="border-b">
+      <p class="font-semibold text-lg">
+        {{ getTranslation('FORM_STEP_SUMMARY_CAPTION_1') }}
+      </p>
+      <div class="grid grid-cols-6 w-full mt-2">
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_1_LASTNAME_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepOne.beneficiaryLastName }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_1_FIRSTNAME_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepOne.beneficiaryFirstName }}
+          </p>
+        </div>
+      </div>
+      <button
+        (click)="goTo.emit(0)"
+        class="py-3 px-6 my-6 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer"
+      >
+        {{ getTranslation('FORM_STEP_SUMMARY_MODIFY') }}
+      </button>
+    </div>
+    <div *ngIf="formData.stepTwo" class="border-b">
+      <p class="font-semibold text-lg">
+        {{ getTranslation('FORM_STEP_SUMMARY_CAPTION_2') }}
+      </p>
+
+      <div class="grid grid-cols-6 w-full mt-2">
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_2_LASTNAME_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepTwo.defunctFirstName }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_2_FIRSTNAME_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepTwo.defunctLastName }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_2_BIRTHDATE_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepTwo.defunctBirthdate }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepTwo.defunctClientNumber }}
+          </p>
+        </div>
+      </div>
+      <button
+        (click)="goTo.emit(1)"
+        class="py-3 px-6 my-6 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer"
+      >
+        {{ getTranslation('FORM_STEP_SUMMARY_MODIFY') }}
+      </button>
+    </div>
+    <div *ngIf="formData.stepThree" class="border-b">
+      <p class="font-semibold text-lg">
+        {{ getTranslation('FORM_STEP_SUMMARY_CAPTION_3') }}
+      </p>
+
+      <div class="grid grid-cols-6 w-full mt-2">
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_LASTNAME_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.personalLastName }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_USUAL_NAME_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.personalUsualName }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.personalFirstName }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.personalBirthDate }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.personalBirthCountry }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_BIRTH_CITY_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.personalBirthCity }}
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-6 w-full mt-2 content-between">
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_ADDRESS_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.homeAddress }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_ADDITIONAL_ADDRESS_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.homeAdditionalAddress }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_ZIP_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">{{ formData.stepThree.homeZIP }}</p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_CITY_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.homeCity }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_3_COUNTRY_INPUT_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ formData.stepThree.homeCountry }}
+          </p>
+        </div>
+      </div>
+      <button
+        (click)="goTo.emit(2)"
+        class="py-3 px-6 my-6 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer"
+      >
+        {{ getTranslation('FORM_STEP_SUMMARY_MODIFY') }}
+      </button>
+    </div>
+
+    <!-- <button (click)="restart()">Recommencer</button> -->
+  </div>
+</div>

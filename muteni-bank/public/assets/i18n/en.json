@@ -67,5 +67,14 @@
   "FORM_STEP_3_CITY_INPUT_PLACEHOLDER": "Enter your city...",
   "FORM_STEP_3_COUNTRY_INPUT_LABEL": "Country",
   "FORM_STEP_3_COUNTRY_INPUT_PLACEHOLDER": "Enter your country...",
-  "FORM_STEP_3_CONTINUE_BUTTON": "Continue"
+  "FORM_STEP_3_CONTINUE_BUTTON": "Continue",
+  "FORM_STEP_SUMMARY_BREADCRUMB": "Summary",
+  "FORM_STEP_SUMMARY_TITLE": "FACTA/AEOI Form",
+  "FORM_STEP_SUMMARY_SUBTITLE": "Summary",
+  "FORM_STEP_SUMMARY_TEXT_1": "Before submitting, please ensure that all entered information corresponds to your situation.",
+  "FORM_STEP_SUMMARY_CAPTION_1": "Legal Representative Information",
+  "FORM_STEP_SUMMARY_CAPTION_2": "Deceased Information",
+  "FORM_STEP_SUMMARY_CAPTION_3": "Beneficiary Information",
+  "FORM_STEP_SUMMARY_CAPTION_4": "Beneficiary's Tax Residence",
+  "FORM_STEP_SUMMARY_MODIFY": "Edit"
 }
