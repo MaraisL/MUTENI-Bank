@@ -5,7 +5,7 @@
     (stepClicked)="goToStep($event)"
   ></app-breadcrumb>
   <ng-container [ngSwitch]="currentStep">
-    <app-step-one *ngSwitchCase="0" (next)="onNextStep($event)"></app-step-one>
+    <app-step-one *ngSwitchCase="4" (next)="onNextStep($event)"></app-step-one>
     <app-step-two
       *ngSwitchCase="1"
       (next)="finish()"
@@ -16,10 +16,81 @@
       (next)="finish()"
       (previous)="goToPrevious()"
     ></app-step-three>
-    <div *ngSwitchDefault>
-      <h2>Formulaire Terminé !</h2>
+    <div *ngSwitchCase="0">
+      <p>Information du représantant legal</p>
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th>nom</th>
+            <th>Prénom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ formData.stepOne.beneficiaryLastName }}</td>
+            <td>{{ formData.stepOne.beneficiaryFirstName }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button>modify</button>
+      <p>Information du représantant legal</p>
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th>nom</th>
+            <th>Prénom</th>
+            <th>nom</th>
+            <th>Prénom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ formData.stepTwo.defunctFirstName }}</td>
+            <td>{{ formData.stepTwo.defunctLastName }}</td>
+            <td>{{ formData.stepTwo.defunctBirthdate }}</td>
+            <td>{{ formData.stepTwo.defunctClientNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button>modify</button>
+      <p>Information du représantant legal</p>
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th>nom</th>
+            <th>Prénom</th>
+            <th>nom</th>
+            <th>Prénom</th>
+            <th>nom</th>
+            <th>Prénom</th>
+            <th>nom</th>
+            <th>Prénom</th>
+            <th>nom</th>
+            <th>Prénom</th>
+            <th>nom</th>
+            <th>Prénom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ formData.stepThree.personalLastName }}</td>
+            <td>{{ formData.stepThree.personalUsualName }}</td>
+            <td>{{ formData.stepThree.personalFirstName }}</td>
+            <td>{{ formData.stepThree.personalBirthDate }}</td>
+            <td>{{ formData.stepThree.personalBirthCity }}</td>
+            <td>{{ formData.stepThree.personalBirthCountry }}</td>
+            <td>{{ formData.stepThree.homeAddress }}</td>
+            <td>{{ formData.stepThree.homeAdditionalAddress }}</td>
+            <td>{{ formData.stepThree.homeZIP }}</td>
+            <td>{{ formData.stepThree.homeCity }}</td>
+            <td>{{ formData.stepThree.homeCountry }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button>modify</button>
+      <!-- <h2>Formulaire Terminé !</h2>
       <pre>{{ formData | json }}</pre>
-      <button (click)="restart()">Recommencer</button>
+      <button (click)="restart()">Recommencer</button> -->
     </div>
   </ng-container>
   <pre
