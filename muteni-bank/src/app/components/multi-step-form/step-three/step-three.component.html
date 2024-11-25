@@ -300,8 +300,13 @@
             }"
           >
             <option value="" disabled selected>Choisissez un pays</option>
-            <option *ngFor="let country of countries" [value]="country.name">
-              {{ country.name }}
+            <option *ngFor="let country of countries" [value]="country.value">
+              <span *ngIf="getCurrentLang() === 'fr'">{{
+                country.name.FR
+              }}</span>
+              <span *ngIf="getCurrentLang() === 'en'">{{
+                country.name.EN
+              }}</span>
             </option>
           </select>
           <app-check-icon
@@ -340,6 +345,7 @@
           </div>
         </div>
       </div>
+
       <!-- <label class="flex flex-col font-semibold">
           {{ getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL') }}
           <div class="flex w-full relative">

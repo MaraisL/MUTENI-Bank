@@ -138,4 +138,8 @@ export class StepThreeComponent implements OnInit {
   getTranslation(key: string): string {
     return this.translationService.translate(key);
   }
+
+  getCurrentLang(): string {
+    return this.translationService.getCurrentLang();
+  }
 }
