@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -10,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../../services/translation.service';
 import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
 import { CheckIconComponent } from '../../check-icon/check-icon.component';
+import { CountryService } from '../../../services/country.service';
 
 @Component({
   standalone: true,
@@ -20,17 +22,20 @@ import { CheckIconComponent } from '../../check-icon/check-icon.component';
     CommonModule,
     ProgressBarComponent,
     CheckIconComponent,
+    FormsModule,
   ],
 })
-export class StepThreeComponent {
+export class StepThreeComponent implements OnInit {
   @Output() next = new EventEmitter<void>();
   @Output() previous = new EventEmitter<void>();
   form: FormGroup;
+  countries: any[] = [];
 
   constructor(
     private fb: FormBuilder,
     private formDataService: FormDataService,
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    private countryService: CountryService
   ) {
     const savedData = this.formDataService.getData('stepThree');
     this.form = this.fb.group({
@@ -114,6 +119,12 @@ export class StepThreeComponent {
           Validators.pattern(/^[a-zA-ZÀ-ÖØ-öø-ÿ \-']+$/),
         ],
       ],
+    });
+  }
+
+  ngOnInit(): void {
+    this.countryService.getCountries().subscribe((data) => {
+      this.countries = data;
     });
   }
 
