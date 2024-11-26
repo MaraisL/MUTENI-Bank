@@ -1,9 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslationService } from '../../../services/translation.service';
 import { FormDataService } from '../../../services/form-data.service';
 import { CommonModule } from '@angular/common';

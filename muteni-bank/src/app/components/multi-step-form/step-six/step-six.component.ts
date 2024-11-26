@@ -16,11 +16,7 @@ import { CheckIconComponent } from '../../check-icon/check-icon.component';
   standalone: true,
   selector: 'app-step-six',
   templateUrl: './step-six.component.html',
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    CheckIconComponent,
-  ],
+  imports: [ReactiveFormsModule, CommonModule, CheckIconComponent],
 })
 export class StepSixComponent {
   @Output() next = new EventEmitter();

@@ -16,12 +16,7 @@ import { CountryService } from '../../../services/country.service';
   standalone: true,
   selector: 'app-step-three',
   templateUrl: './step-three.component.html',
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    CheckIconComponent,
-    FormsModule,
-  ],
+  imports: [ReactiveFormsModule, CommonModule, CheckIconComponent, FormsModule],
 })
 export class StepThreeComponent implements OnInit {
   @Output() next = new EventEmitter<void>();
