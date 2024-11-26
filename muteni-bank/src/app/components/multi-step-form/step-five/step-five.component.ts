@@ -3,18 +3,16 @@ import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
-  Validators,
 } from '@angular/forms';
 import { TranslationService } from '../../../services/translation.service';
 import { FormDataService } from '../../../services/form-data.service';
-import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-step-five',
   templateUrl: './step-five.component.html',
-  imports: [ReactiveFormsModule, ProgressBarComponent, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
 })
 export class StepFiveComponent {
   @Output() next = new EventEmitter();

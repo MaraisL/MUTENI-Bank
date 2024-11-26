@@ -1,32 +1,3 @@
-<div class="mb-4 font-semibold flex gap-4">
-  <button
-    (click)="previous.emit()"
-    class="pr-2 pl-1 py-1 text-4xl shadow-lg border-2 border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
-  >
-    <svg
-      class=""
-      xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <polyline points="30 36 18 24 30 12"></polyline>
-    </svg>
-  </button>
-  <div>
-    <h2 class="uppercase text-2xl">
-      {{ getTranslation('FORM_STEP_4_TITLE') }}
-    </h2>
-    <h3 class="text-xl">{{ getTranslation('FORM_STEP_4_SUBTITLE') }}</h3>
-  </div>
-</div>
-<app-progress-bar [currentStep]="4" [totalSteps]="7"></app-progress-bar>
-
 <p>
   {{ getTranslation('FORM_STEP_4_TEXT_1') }}
 </p>

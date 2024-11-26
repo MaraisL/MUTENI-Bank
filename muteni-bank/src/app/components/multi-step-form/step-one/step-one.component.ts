@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { TranslationService } from '../../../services/translation.service';
 import { FormDataService } from '../../../services/form-data.service';
-import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
 import { CommonModule } from '@angular/common';
 import { CheckIconComponent } from '../../check-icon/check-icon.component';
 
@@ -17,7 +16,6 @@ import { CheckIconComponent } from '../../check-icon/check-icon.component';
   templateUrl: './step-one.component.html',
   imports: [
     ReactiveFormsModule,
-    ProgressBarComponent,
     CommonModule,
     CheckIconComponent,
   ],

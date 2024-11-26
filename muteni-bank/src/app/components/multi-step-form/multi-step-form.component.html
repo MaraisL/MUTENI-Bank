@@ -1,41 +1,30 @@
 <div class="container mx-auto px-4 mt-10">
-  <app-breadcrumb
-    [steps]="steps"
-    [currentStep]="currentStep"
-    (stepClicked)="goToStep($event)"
-  ></app-breadcrumb>
+  <app-breadcrumb [steps]="steps" [currentStep]="currentStep" (stepClicked)="goToStep($event)"></app-breadcrumb>
+  <div class="mb-4 font-semibold flex gap-4">
+    <button (click)="goToPrevious()"
+      class="pr-2 pl-1 py-1 text-4xl border-2 shadow-lg border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand">
+      <svg class="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none"
+        stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="30 36 18 24 30 12"></polyline>
+      </svg>
+    </button>
+    <div>
+      <h2 class="uppercase text-2xl">
+        {{ getTranslation('FORM_STEP_' + (currentStep+1) + '_TITLE') }}
+      </h2>
+      <h3 class="text-xl">{{ getTranslation('FORM_STEP_' + (currentStep+1) + '_SUBTITLE') }}
+      </h3>
+    </div>
+  </div>
+  <app-progress-bar [currentStep]="currentStep+1" [totalSteps]="steps.length"></app-progress-bar>
   <ng-container [ngSwitch]="currentStep">
-    <app-step-one *ngSwitchCase="0" (next)="onNextStep($event)"></app-step-one>
-    <app-step-two
-      *ngSwitchCase="1"
-      (next)="finish()"
-      (previous)="goToPrevious()"
-    ></app-step-two>
-    <app-step-three
-      *ngSwitchCase="2"
-      (next)="finish()"
-      (previous)="goToPrevious()"
-    ></app-step-three>
-    <app-step-four
-      *ngSwitchCase="3"
-      (next)="finish()"
-      (previous)="goToPrevious()"
-    ></app-step-four>
-    <app-step-five
-      *ngSwitchCase="4"
-      (next)="finish()"
-      (previous)="goToPrevious()"
-    ></app-step-five>
-    <app-step-six
-      *ngSwitchCase="5"
-      (next)="finish()"
-      (previous)="goToPrevious()"
-    ></app-step-six>
-    <app-step-summary
-      *ngSwitchCase="6"
-      (goTo)="goToStep($event)"
-      (previous)="goToPrevious()"
-    ></app-step-summary>
+    <app-step-one *ngSwitchCase="0" (next)="finish()"></app-step-one>
+    <app-step-two *ngSwitchCase="1" (next)="finish()" (previous)="goToPrevious()"></app-step-two>
+    <app-step-three *ngSwitchCase="2" (next)="finish()" (previous)="goToPrevious()"></app-step-three>
+    <app-step-four *ngSwitchCase="3" (next)="finish()" (previous)="goToPrevious()"></app-step-four>
+    <app-step-five *ngSwitchCase="4" (next)="finish()" (previous)="goToPrevious()"></app-step-five>
+    <app-step-six *ngSwitchCase="5" (next)="finish()" (previous)="goToPrevious()"></app-step-six>
+    <app-step-summary *ngSwitchCase="6" (goTo)="goToStep($event)" (previous)="goToPrevious()"></app-step-summary>
   </ng-container>
   <!-- <pre
 class="absolute top-44 right-44 shadow bg-lime-400 bg-opacity-50 rounded p-3"

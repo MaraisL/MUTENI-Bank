@@ -9,7 +9,6 @@ import {
 import { FormDataService } from '../../../services/form-data.service';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../../services/translation.service';
-import { ProgressBarComponent } from '../../progress-bar/progress-bar.component';
 import { CheckIconComponent } from '../../check-icon/check-icon.component';
 import { CountryService } from '../../../services/country.service';
 
@@ -20,7 +19,6 @@ import { CountryService } from '../../../services/country.service';
   imports: [
     ReactiveFormsModule,
     CommonModule,
-    ProgressBarComponent,
     CheckIconComponent,
     FormsModule,
   ],

@@ -10,6 +10,7 @@ import { StepSummaryComponent } from './step-summary/step-summary.component';
 import { StepFourComponent } from './step-four/step-four.component';
 import { StepFiveComponent } from './step-five/step-five.component';
 import { StepSixComponent } from './step-six/step-six.component';
+import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 
 @Component({
   standalone: true,
@@ -25,6 +26,7 @@ import { StepSixComponent } from './step-six/step-six.component';
     StepSummaryComponent,
     CommonModule,
     BreadcrumbComponent,
+    ProgressBarComponent,
   ],
 })
 export class MultiStepFormComponent {
@@ -51,7 +53,9 @@ export class MultiStepFormComponent {
   }
 
   goToPrevious() {
-    this.currentStep--;
+    if (this.currentStep > 0) {
+      this.currentStep--;
+    }
   }
 
   goToStep(step: number) {
@@ -68,11 +72,6 @@ export class MultiStepFormComponent {
   restart() {
     this.formDataService.resetData(); // Reset data
     this.currentStep = 1;
-  }
-
-  onNextStep(data: any) {
-    this.formData['stepOne'] = data; // Save data
-    this.goToNext();
   }
 
   getTranslation(key: string): string {
