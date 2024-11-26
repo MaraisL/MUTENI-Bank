@@ -1,0 +1,76 @@
+<div class="mb-4 font-semibold flex gap-4">
+  <button
+    (click)="previous.emit()"
+    class="pr-2 pl-1 py-1 text-4xl shadow-lg border-2 border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
+  >
+    <svg
+      class=""
+      xmlns="http://www.w3.org/2000/svg"
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <polyline points="30 36 18 24 30 12"></polyline>
+    </svg>
+  </button>
+  <div>
+    <h2 class="uppercase text-2xl">
+      {{ getTranslation('FORM_STEP_4_TITLE') }}
+    </h2>
+    <h3 class="text-xl">{{ getTranslation('FORM_STEP_4_SUBTITLE') }}</h3>
+  </div>
+</div>
+<app-progress-bar [currentStep]="4" [totalSteps]="5"></app-progress-bar>
+
+<p>
+  {{ getTranslation('FORM_STEP_4_TEXT_1') }}
+</p>
+<p class="mb-3">{{ getTranslation('FORM_STEP_4_TEXT_2') }}</p>
+
+<form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
+  <label class="font-semibold text-xl mb-2">
+    {{ getTranslation('FORM_STEP_4_TAX_RESIDENCE_FRANCE_LABEL') }}
+  </label>
+  <label class="relative cursor-pointer mb-6">
+    <input type="checkbox" class="sr-only peer " formControlName="isResidentFrance" />
+    <div class="w-20 h-11 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-bg-primary-brand rounded-full peer
+                peer-checked:bg-primary-brand peer-checked:after:translate-x-10
+                after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300
+                after:border after:rounded-full after:h-10 after:w-10 after:transition-all">
+      <span class="absolute top-2 left-2 font font-bold text-white">{{ getTranslation('FORM_STEP_4_TAX_TRUE') }}</span>
+      <span class="absolute top-2 left-11 font font-bold text-secondary-brand">{{
+        getTranslation('FORM_STEP_4_TAX_FALSE')
+        }}</span>
+    </div>
+  </label>
+
+  <label class="font-semibold text-xl mb-2">
+    {{ getTranslation('FORM_STEP_4_TAX_RESIDENCE_OTHER_LABEL') }}
+  </label>
+  <label class="relative cursor-pointer">
+    <input type="checkbox" class="sr-only peer" formControlName="isResidentOtherCountry" />
+    <div class="w-20 h-11 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-bg-primary-brand rounded-full peer
+                peer-checked:bg-primary-brand peer-checked:after:translate-x-10
+                after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300
+                after:border after:rounded-full after:h-10 after:w-10 after:transition-all">
+      <span class="absolute top-2 left-2 font font-bold text-white">{{ getTranslation('FORM_STEP_4_TAX_TRUE') }}</span>
+      <span class="absolute top-2 left-11 font font-bold text-secondary-brand">{{
+        getTranslation('FORM_STEP_4_TAX_FALSE')
+        }}</span>
+    </div>
+  </label>
+
+  <div class="flex justify-end">
+    <button type="submit"
+      class="py-3 px-6 mb-4 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer disabled:bg-opacity-50 disabled:hover:scale-100 disabled:hover:bg-opacity-50 disabled:hover:bg-primary-brand disabled:hover:cursor-not-allowed"
+      [disabled]="form.invalid">
+      {{ getTranslation('FORM_STEP_3_CONTINUE_BUTTON') }}
+    </button>
+  </div>
+
+</form>

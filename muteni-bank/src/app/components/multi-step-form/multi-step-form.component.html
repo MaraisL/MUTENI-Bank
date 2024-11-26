@@ -16,8 +16,13 @@
       (next)="finish()"
       (previous)="goToPrevious()"
     ></app-step-three>
+    <app-step-four
+    *ngSwitchCase="3"
+    (next)="finish()"
+    (previous)="goToPrevious()"
+  ></app-step-four>
     <app-step-summary
-      *ngSwitchCase="3"
+      *ngSwitchCase="4"
       (goTo)="goToStep($event)"
       (previous)="goToPrevious()"
     ></app-step-summary>

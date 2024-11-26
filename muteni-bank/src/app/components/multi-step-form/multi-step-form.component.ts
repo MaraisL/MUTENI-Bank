@@ -8,6 +8,7 @@ import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { TranslationService } from '../../services/translation.service';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 import { StepSummaryComponent } from './step-summary/step-summary.component';
+import { StepFourComponent } from './step-four/step-four.component';
 
 @Component({
   standalone: true,
@@ -17,6 +18,7 @@ import { StepSummaryComponent } from './step-summary/step-summary.component';
     StepOneComponent,
     StepTwoComponent,
     StepThreeComponent,
+    StepFourComponent,
     StepSummaryComponent,
     CommonModule,
     BreadcrumbComponent,
@@ -28,6 +30,7 @@ export class MultiStepFormComponent {
     'FORM_STEP_1_BREADCRUMB',
     'FORM_STEP_2_BREADCRUMB',
     'FORM_STEP_3_BREADCRUMB',
+    'FORM_STEP_4_BREADCRUMB',
     'FORM_STEP_SUMMARY_BREADCRUMB',
   ];
 
