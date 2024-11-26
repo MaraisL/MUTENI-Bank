@@ -283,40 +283,42 @@
           </div>
         </div>
         <label class="flex flex-col font-semibold" for="country">
-          Choisissez un pays :
-          <select
-            formControlName="personalBirthCountry"
-            required
-            [ngClass]="{
-              'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-                form.get('personalBirthCountry')?.invalid &&
-                (form.get('personalBirthCountry')?.dirty ||
-                  form.get('personalBirthCountry')?.touched),
-              'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+          {{ getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL') }}
+          <div class="flex w-full relative">
+            <select
+              formControlName="personalBirthCountry"
+              required
+              [ngClass]="{
+                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
+                  form.get('personalBirthCountry')?.invalid &&
+                  (form.get('personalBirthCountry')?.dirty ||
+                    form.get('personalBirthCountry')?.touched),
+                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
+                  form.get('personalBirthCountry')?.valid &&
+                  (form.get('personalBirthCountry')?.dirty ||
+                    form.get('personalBirthCountry')?.touched),
+                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
+              }"
+            >
+              <option value="" disabled selected>Choisissez un pays</option>
+              <option *ngFor="let country of countries" [value]="country.value">
+                <span *ngIf="getCurrentLang() === 'fr'">{{
+                  country.name.FR
+                }}</span>
+                <span *ngIf="getCurrentLang() === 'en'">{{
+                  country.name.EN
+                }}</span>
+              </option>
+            </select>
+            <app-check-icon
+              *ngIf="
                 form.get('personalBirthCountry')?.valid &&
                 (form.get('personalBirthCountry')?.dirty ||
-                  form.get('personalBirthCountry')?.touched),
-              'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-            }"
-          >
-            <option value="" disabled selected>Choisissez un pays</option>
-            <option *ngFor="let country of countries" [value]="country.value">
-              <span *ngIf="getCurrentLang() === 'fr'">{{
-                country.name.FR
-              }}</span>
-              <span *ngIf="getCurrentLang() === 'en'">{{
-                country.name.EN
-              }}</span>
-            </option>
-          </select>
-          <app-check-icon
-            *ngIf="
-              form.get('personalBirthCountry')?.valid &&
-              (form.get('personalBirthCountry')?.dirty ||
-                form.get('personalBirthCountry')?.touched)
-            "
-            class="absolute h-6 right-8 top-6"
-          />
+                  form.get('personalBirthCountry')?.touched)
+              "
+              class="absolute h-6 right-8 top-6"
+            />
+          </div>
         </label>
         <div class="h-6">
           <div
@@ -345,38 +347,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <label class="flex flex-col font-semibold">
-          {{ getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL') }}
-          <div class="flex w-full relative">
-            <input
-              formControlName="personalBirthCountry"
-              placeholder="{{
-                getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_PLACEHOLDER')
-              }}"
-              [ngClass]="{
-                'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
-                  form.get('personalBirthCountry')?.invalid &&
-                  (form.get('personalBirthCountry')?.dirty ||
-                    form.get('personalBirthCountry')?.touched),
-                'border-green-600 focus-visible:border-green-600 focus-visible:outline focus-visible:outline-green-600':
-                  form.get('personalBirthCountry')?.valid &&
-                  (form.get('personalBirthCountry')?.dirty ||
-                    form.get('personalBirthCountry')?.touched),
-                'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
-              }"
-            />
-            <app-check-icon
-              *ngIf="
-                form.get('personalBirthCountry')?.valid &&
-                (form.get('personalBirthCountry')?.dirty ||
-                  form.get('personalBirthCountry')?.touched)
-              "
-              class="absolute h-6 right-8 top-6"
-            />
-          </div>
-        </label> -->
-
       <div>
         <p class="mb-3 text-2xl font-semibold">
           {{ getTranslation('FORM_STEP_3_TEXT_1') }}
@@ -581,14 +551,13 @@
             </small>
           </div>
         </div>
-        <label class="flex flex-col font-semibold">
+
+        <label class="flex flex-col font-semibold" for="country">
           {{ getTranslation('FORM_STEP_3_COUNTRY_INPUT_LABEL') }}
           <div class="flex w-full relative">
-            <input
+            <select
               formControlName="homeCountry"
-              placeholder="{{
-                getTranslation('FORM_STEP_3_COUNTRY_INPUT_PLACEHOLDER')
-              }}"
+              required
               [ngClass]="{
                 'text-red-500 border-red-500 focus-visible:border-red-500 focus-visible:outline focus-visible:outline-red-500':
                   form.get('homeCountry')?.invalid &&
@@ -600,14 +569,26 @@
                     form.get('homeCountry')?.touched),
                 'border rounded-lg border-black mt-3 p-3 w-full font-normal': true,
               }"
-            />
+            >
+              <option value="" disabled selected>
+                {{ getTranslation('FORM_STEP_3_COUNTRY_INPUT_LABEL') }}
+              </option>
+              <option *ngFor="let country of countries" [value]="country.value">
+                <span *ngIf="getCurrentLang() === 'fr'">{{
+                  country.name.FR
+                }}</span>
+                <span *ngIf="getCurrentLang() === 'en'">{{
+                  country.name.EN
+                }}</span>
+              </option>
+            </select>
             <app-check-icon
               *ngIf="
                 form.get('homeCountry')?.valid &&
                 (form.get('homeCountry')?.dirty ||
                   form.get('homeCountry')?.touched)
               "
-              class="absolute h-6 right-4 top-6"
+              class="absolute h-6 right-8 top-6"
             />
           </div>
         </label>

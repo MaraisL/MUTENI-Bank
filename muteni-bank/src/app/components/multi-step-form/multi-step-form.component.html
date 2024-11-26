@@ -5,14 +5,14 @@
     (stepClicked)="goToStep($event)"
   ></app-breadcrumb>
   <ng-container [ngSwitch]="currentStep">
-    <app-step-one *ngSwitchCase="2" (next)="onNextStep($event)"></app-step-one>
+    <app-step-one *ngSwitchCase="0" (next)="onNextStep($event)"></app-step-one>
     <app-step-two
       *ngSwitchCase="1"
       (next)="finish()"
       (previous)="goToPrevious()"
     ></app-step-two>
     <app-step-three
-      *ngSwitchCase="0"
+      *ngSwitchCase="2"
       (next)="finish()"
       (previous)="goToPrevious()"
     ></app-step-three>
