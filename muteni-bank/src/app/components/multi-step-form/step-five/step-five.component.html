@@ -1,8 +1,20 @@
 <div class="mb-4 font-semibold flex gap-4">
-  <button (click)="previous.emit()"
-    class="pr-2 pl-1 py-1 text-4xl shadow-lg border-2 border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand">
-    <svg class="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none"
-      stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <button
+    (click)="previous.emit()"
+    class="pr-2 pl-1 py-1 text-4xl shadow-lg border-2 border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
+  >
+    <svg
+      class=""
+      xmlns="http://www.w3.org/2000/svg"
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
       <polyline points="30 36 18 24 30 12"></polyline>
     </svg>
   </button>
@@ -20,15 +32,21 @@
     {{ getTranslation('FORM_STEP_5_TAX_RESIDENCE_US_LABEL') }}
   </label>
   <label class="relative cursor-pointer mb-6">
-    <input type="checkbox" class="sr-only peer " formControlName="isResidentUS" />
-    <div class="w-20 h-11 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-bg-primary-brand rounded-full peer
-                peer-checked:bg-primary-brand peer-checked:after:translate-x-10
-                after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300
-                after:border after:rounded-full after:hover:scale-105 after:h-10 after:w-10 after:transition-all">
-      <span class="absolute top-2 left-2 font font-bold text-white">{{ getTranslation('FORM_STEP_5_TAX_TRUE') }}</span>
-      <span class="absolute top-2 left-11 font font-bold text-secondary-brand">{{
-        getTranslation('FORM_STEP_5_TAX_FALSE')
-        }}</span>
+    <input
+      type="checkbox"
+      class="sr-only peer"
+      formControlName="isResidentUS"
+    />
+    <div
+      class="w-20 h-11 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-bg-primary-brand rounded-full peer peer-checked:bg-primary-brand peer-checked:after:translate-x-10 after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:hover:scale-105 after:h-10 after:w-10 after:transition-all"
+    >
+      <span class="absolute top-2 left-2 font font-bold text-white">{{
+        getTranslation('FORM_STEP_5_TAX_TRUE')
+      }}</span>
+      <span
+        class="absolute top-2 left-11 font font-bold text-secondary-brand"
+        >{{ getTranslation('FORM_STEP_5_TAX_FALSE') }}</span
+      >
     </div>
   </label>
 
@@ -37,27 +55,28 @@
   </label>
   <label class="relative cursor-pointer mb-10">
     <input type="checkbox" class="sr-only peer" formControlName="isUSCitizen" />
-    <div class="w-20 h-11 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-bg-primary-brand rounded-full peer
-                peer-checked:bg-primary-brand peer-checked:after:translate-x-10
-                after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300
-                after:border after:rounded-full after:hover:scale-105 after:h-10 after:w-10 after:transition-all">
-      <span class="absolute top-2 left-2 font font-bold text-white">{{ getTranslation('FORM_STEP_5_TAX_TRUE') }}</span>
-      <span class="absolute top-2 left-11 font font-bold text-secondary-brand">{{
-        getTranslation('FORM_STEP_5_TAX_FALSE')
-        }}</span>
+    <div
+      class="w-20 h-11 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-bg-primary-brand rounded-full peer peer-checked:bg-primary-brand peer-checked:after:translate-x-10 after:content-[''] after:absolute after:top-0.5 after:left-[1px] after:bg-white after:border-gray-300 after:border after:rounded-full after:hover:scale-105 after:h-10 after:w-10 after:transition-all"
+    >
+      <span class="absolute top-2 left-2 font font-bold text-white">{{
+        getTranslation('FORM_STEP_5_TAX_TRUE')
+      }}</span>
+      <span
+        class="absolute top-2 left-11 font font-bold text-secondary-brand"
+        >{{ getTranslation('FORM_STEP_5_TAX_FALSE') }}</span
+      >
     </div>
   </label>
 
-  <p>
-    {{ getTranslation('FORM_STEP_5_TEXT_1') }}s
-  </p>
+  <p>{{ getTranslation('FORM_STEP_5_TEXT_1') }}s</p>
 
   <div class="flex justify-end">
-    <button type="submit"
+    <button
+      type="submit"
       class="py-3 px-6 mb-4 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer disabled:bg-opacity-50 disabled:hover:scale-100 disabled:hover:bg-opacity-50 disabled:hover:bg-primary-brand disabled:hover:cursor-not-allowed"
-      [disabled]="form.invalid">
+      [disabled]="form.invalid"
+    >
       {{ getTranslation('FORM_STEP_3_CONTINUE_BUTTON') }}
     </button>
   </div>
-
 </form>
