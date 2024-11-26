@@ -85,6 +85,14 @@
   "FORM_STEP_5_TAX_FALSE": "non",
   "FORM_STEP_5_US_CITIZEN_LABEL": "Êtes-vous de nationalité américaine ?",
   "FORM_STEP_5_TEXT_1": "❗ Si vous n'avez pas la nationalité américaine et que vous n'êtes pas résident(e) américain(e) mais que vous êtes né(e) aux Etats-Unis, veuillez nous fournir un certificat de perte ou de non obtention de la nationalité américaine (u tout autre justificatif).",
+  "FORM_STEP_6_BREADCRUMB": "Votre numéro d'identification fiscale",
+  "FORM_STEP_6_TITLE": "Formulaire FACTA/AEOI",
+  "FORM_STEP_6_SUBTITLE": "Votre numéro d'identification fiscale (NIF)",
+  "FORM_STEP_6_TEXT_1": "Veuillez indiquer l'ensemble des pays autre que la France dans lesquels vous êtes considéré(e) comme résident(e) à des fins fiscales et précisez votre Numéro d'Identification Fiscale (NIF) pour chacun de ces pays.",
+  "FORM_STEP_6_TAX_COUNTRY_LABEL": "Pays de résidence fiscale",
+  "FORM_STEP_6_TAX_NIF": "NIF",
+  "FORM_STEP_6_ADD_FIELD": "Ajouter un champ",
+  "FORM_STEP_6_REMOVE_FIELD": "Supprimer",
   "FORM_STEP_SUMMARY_BREADCRUMB": "Récapitulatif",
   "FORM_STEP_SUMMARY_TITLE": "Formulaire FACTA/AEOI",
   "FORM_STEP_SUMMARY_SUBTITLE": "Récapitulatif",
@@ -94,5 +102,6 @@
   "FORM_STEP_SUMMARY_CAPTION_3": "Informations du bénéficiaire",
   "FORM_STEP_SUMMARY_CAPTION_4": "Résidence fiscale",
   "FORM_STEP_SUMMARY_CAPTION_5": "Profil US Person",
+  "FORM_STEP_SUMMARY_CAPTION_6": "Résidence fiscale du bénéficiaire",
   "FORM_STEP_SUMMARY_MODIFY": "Modifier"
 }

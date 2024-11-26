@@ -26,8 +26,13 @@
       (next)="finish()"
       (previous)="goToPrevious()"
     ></app-step-five>
-    <app-step-summary
+    <app-step-six
       *ngSwitchCase="5"
+      (next)="finish()"
+      (previous)="goToPrevious()"
+    ></app-step-six>
+    <app-step-summary
+      *ngSwitchCase="6"
       (goTo)="goToStep($event)"
       (previous)="goToPrevious()"
     ></app-step-summary>

@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "name": {
+            "EN": "France",
+            "FR": "France"
+        },
+        "value": "France"
+    },
+    {
+        "id": "2",
+        "name": {
+            "EN": "United States",
+            "FR": "Etats-Unis"
+        },
+        "value": "United States"
+    },
+    {
+        "id": "3",
+        "name": {
+            "EN": "Canada",
+            "FR": "Canada"
+        },
+        "value": "Canada"
+    },
+    {
+        "id": "4",
+        "name": {
+            "EN": "Germany",
+            "FR": "Allemagne"
+        },
+        "value": "Germany"
+    },
+    {
+        "id": "5",
+        "name": {
+            "EN": "Spain",
+            "FR": "Espagne"
+        },
+        "value": "Spain"
+    },
+    {
+        "id": "6",
+        "name": {
+            "EN": "Italy",
+            "FR": "Italie"
+        },
+        "value": "Italy"
+    },
+    {
+        "id": "7",
+        "name": {
+            "EN": "Portugal",
+            "FR": "Portugal"
+        },
+        "value": "Portugal"
+    },
+    {
+        "id": "8",
+        "name": {
+            "EN": "Belgium",
+            "FR": "Belgique"
+        },
+        "value": "Belgium"
+    },
+    {
+        "id": "9",
+        "name": {
+            "EN": "Luxembourg",
+            "FR": "Luxembourg"
+        },
+        "value": "Luxembourg"
+    },
+    {
+        "id": "10",
+        "name": {
+            "EN": "Other EU countries",
+            "FR": "Autre pays de l'UE"
+        },
+        "value": "Other EU countries"
+    }
+]

@@ -22,8 +22,6 @@ export class StepFiveComponent {
 
   form: FormGroup;
 
-  isResidentFrance: boolean = true; // Valeur initiale pour le premier switch
-  isResidentOtherCountry: boolean = false; // Valeur initiale pour le deuxième switch
   constructor(
     private fb: FormBuilder,
     private formDataService: FormDataService,
@@ -32,8 +30,8 @@ export class StepFiveComponent {
     // Init form
     const savedData = this.formDataService.getData('stepFive');
     this.form = this.fb.group({
-      isResidentUS: [savedData.isResidentUS || ''],
-      isUSCitizen: [savedData.isUSCitizen || ''],
+      isResidentUS: [savedData.isResidentUS || false],
+      isUSCitizen: [savedData.isUSCitizen || false],
     });
   }
 

@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
 import { StepThreeComponent } from './step-three/step-three.component';
 import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { TranslationService } from '../../services/translation.service';
-import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
 import { StepSummaryComponent } from './step-summary/step-summary.component';
 import { StepFourComponent } from './step-four/step-four.component';
 import { StepFiveComponent } from './step-five/step-five.component';
+import { StepSixComponent } from './step-six/step-six.component';
 
 @Component({
   standalone: true,
@@ -21,10 +21,10 @@ import { StepFiveComponent } from './step-five/step-five.component';
     StepThreeComponent,
     StepFourComponent,
     StepFiveComponent,
+    StepSixComponent,
     StepSummaryComponent,
     CommonModule,
     BreadcrumbComponent,
-    ProgressBarComponent,
   ],
 })
 export class MultiStepFormComponent {
@@ -34,6 +34,7 @@ export class MultiStepFormComponent {
     'FORM_STEP_3_BREADCRUMB',
     'FORM_STEP_4_BREADCRUMB',
     'FORM_STEP_5_BREADCRUMB',
+    'FORM_STEP_6_BREADCRUMB',
     'FORM_STEP_SUMMARY_BREADCRUMB',
   ];
 

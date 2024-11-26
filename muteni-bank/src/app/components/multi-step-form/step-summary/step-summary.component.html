@@ -2,7 +2,7 @@
   <div class="mb-4 font-semibold flex gap-4">
     <button
       (click)="previous.emit()"
-      class="pr-2 pl-1 py-1 text-4xl border-2 shadow-lg border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
+      class="pr-2 pl-1 py-1 text-4xl shadow-lg border-2 border-primary-brand text-primary-brand rounded-full hover:bg-secondary-brand hover:text-white hover:border-secondary-brand"
     >
       <svg
         class=""
@@ -37,7 +37,7 @@
       </p>
       <div class="grid grid-cols-6 w-full mt-2">
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_1_LASTNAME_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -45,7 +45,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_1_FIRSTNAME_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -67,7 +67,7 @@
 
       <div class="grid grid-cols-6 w-full mt-2">
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_2_LASTNAME_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -75,7 +75,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_2_FIRSTNAME_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -83,7 +83,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_2_BIRTHDATE_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -91,7 +91,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_2_CLIENT_NUMBER_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -113,7 +113,7 @@
 
       <div class="grid grid-cols-6 w-full mt-2">
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_LASTNAME_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -121,7 +121,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_USUAL_NAME_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -129,7 +129,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_FIRSTNAME_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -137,7 +137,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_BIRTHDATE_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -145,7 +145,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_BIRTH_COUNTRY_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -153,7 +153,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_BIRTH_CITY_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -164,7 +164,7 @@
 
       <div class="grid grid-cols-6 w-full mt-2 content-between">
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_ADDRESS_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -172,7 +172,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_ADDITIONAL_ADDRESS_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -180,13 +180,13 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_ZIP_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">{{ formData.stepThree.homeZIP }}</p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_CITY_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -194,7 +194,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_3_COUNTRY_INPUT_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -215,7 +215,7 @@
       </p>
       <div class="grid grid-cols-6 w-full mt-2">
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_4_TAX_RESIDENCE_FRANCE_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -228,7 +228,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_4_TAX_RESIDENCE_OTHER_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -254,7 +254,7 @@
       </p>
       <div class="grid grid-cols-6 w-full mt-2">
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_5_TAX_RESIDENCE_US_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -267,7 +267,7 @@
           </p>
         </div>
         <div class="pr-2 flex flex-col justify-between">
-          <p class="py-3">
+          <p class="pt-3">
             {{ getTranslation('FORM_STEP_5_US_CITIZEN_LABEL') }}
           </p>
           <p class="py-3 font-semibold">
@@ -282,6 +282,38 @@
       </div>
       <button
         (click)="goTo.emit(4)"
+        class="py-3 px-6 my-6 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer"
+      >
+        {{ getTranslation('FORM_STEP_SUMMARY_MODIFY') }}
+      </button>
+    </div>
+    <div *ngIf="formData.stepSix" class="border-b">
+      <p class="font-semibold text-lg">
+        {{ getTranslation('FORM_STEP_SUMMARY_CAPTION_6') }}
+      </p>
+      <div
+        *ngFor="let field of formData.stepSix.fields; let i = index"
+        class="grid grid-cols-6 w-full mt-2"
+      >
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="pt-3">
+            {{ getTranslation('FORM_STEP_6_TAX_COUNTRY_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ field.countryOfTaxResidence }}
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="pt-3">
+            {{ getTranslation('FORM_STEP_6_TAX_NIF') }}
+          </p>
+          <p class="py-3 font-semibold">
+            {{ field.NIF }}
+          </p>
+        </div>
+      </div>
+      <button
+        (click)="goTo.emit(5)"
         class="py-3 px-6 my-6 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer"
       >
         {{ getTranslation('FORM_STEP_SUMMARY_MODIFY') }}
