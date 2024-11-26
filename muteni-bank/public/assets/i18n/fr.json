@@ -77,6 +77,14 @@
   "FORM_STEP_4_TAX_TRUE": "oui",
   "FORM_STEP_4_TAX_FALSE": "non",
   "FORM_STEP_4_TAX_RESIDENCE_OTHER_LABEL": "Êtes-vous résident(e) fiscal(e) d'au moins un autre pays que la France ?",
+  "FORM_STEP_5_BREADCRUMB": "Votre profil US Person",
+  "FORM_STEP_5_TITLE": "Formulaire FACTA/AEOI",
+  "FORM_STEP_5_SUBTITLE": "Votre profil US Person",
+  "FORM_STEP_5_TAX_RESIDENCE_US_LABEL": "Êtes-vous résident(e) des Etats-Unis à des fins fiscales ?",
+  "FORM_STEP_5_TAX_TRUE": "oui",
+  "FORM_STEP_5_TAX_FALSE": "non",
+  "FORM_STEP_5_US_CITIZEN_LABEL": "Êtes-vous de nationalité américaine ?",
+  "FORM_STEP_5_TEXT_1": "❗ Si vous n'avez pas la nationalité américaine et que vous n'êtes pas résident(e) américain(e) mais que vous êtes né(e) aux Etats-Unis, veuillez nous fournir un certificat de perte ou de non obtention de la nationalité américaine (u tout autre justificatif).",
   "FORM_STEP_SUMMARY_BREADCRUMB": "Récapitulatif",
   "FORM_STEP_SUMMARY_TITLE": "Formulaire FACTA/AEOI",
   "FORM_STEP_SUMMARY_SUBTITLE": "Récapitulatif",
@@ -84,6 +92,7 @@
   "FORM_STEP_SUMMARY_CAPTION_1": "Informations du représentant légal",
   "FORM_STEP_SUMMARY_CAPTION_2": "Informations du défunt",
   "FORM_STEP_SUMMARY_CAPTION_3": "Informations du bénéficiaire",
-  "FORM_STEP_SUMMARY_CAPTION_4": "Résidence fiscale du bénéficiaire",
+  "FORM_STEP_SUMMARY_CAPTION_4": "Résidence fiscale",
+  "FORM_STEP_SUMMARY_CAPTION_5": "Profil US Person",
   "FORM_STEP_SUMMARY_MODIFY": "Modifier"
 }

@@ -25,7 +25,7 @@
     <h3 class="text-xl">{{ getTranslation('FORM_STEP_3_SUBTITLE') }}</h3>
   </div>
 </div>
-<app-progress-bar [currentStep]="3" [totalSteps]="5"></app-progress-bar>
+<app-progress-bar [currentStep]="3" [totalSteps]="7"></app-progress-bar>
 <div>
   <form [formGroup]="form" (ngSubmit)="onNext()" class="flex flex-col">
     <p class="mb-3">{{ getTranslation('FORM_STEP_3_TEXT_2') }}</p>

@@ -16,7 +16,7 @@
       </h3>
     </div>
   </div>
-  <app-progress-bar [currentStep]="5" [totalSteps]="5"></app-progress-bar>
+  <app-progress-bar [currentStep]="7" [totalSteps]="7"></app-progress-bar>
   <p>{{ getTranslation('FORM_STEP_SUMMARY_TEXT_1') }}</p>
   <div class="flex flex-col gap-4 mt-6">
     <div *ngIf="formData.stepOne" class="border-b">
@@ -224,6 +224,43 @@
         </div>
       </div>
       <button (click)="goTo.emit(3)"
+        class="py-3 px-6 my-6 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer">
+        {{ getTranslation('FORM_STEP_SUMMARY_MODIFY') }}
+      </button>
+    </div>
+    <div *ngIf="formData.stepFive" class="border-b">
+      <p class="font-semibold text-lg">
+        {{ getTranslation('FORM_STEP_SUMMARY_CAPTION_5') }}
+      </p>
+      <div class="grid grid-cols-6 w-full mt-2">
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_5_TAX_RESIDENCE_US_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            <span *ngIf="formData.stepFive.isResidentUS">
+              {{ getTranslation('FORM_STEP_5_TAX_TRUE') }}
+            </span>
+            <span *ngIf="!formData.stepFive.isResidentUS">
+              {{ getTranslation('FORM_STEP_5_TAX_FALSE') }}
+            </span>
+          </p>
+        </div>
+        <div class="pr-2 flex flex-col justify-between">
+          <p class="py-3">
+            {{ getTranslation('FORM_STEP_5_US_CITIZEN_LABEL') }}
+          </p>
+          <p class="py-3 font-semibold">
+            <span *ngIf="formData.stepFive.isUSCitizen">
+              {{ getTranslation('FORM_STEP_5_TAX_TRUE') }}
+            </span>
+            <span *ngIf="!formData.stepFive.isUSCitizen">
+              {{ getTranslation('FORM_STEP_5_TAX_FALSE') }}
+            </span>
+          </p>
+        </div>
+      </div>
+      <button (click)="goTo.emit(4)"
         class="py-3 px-6 my-6 w-fit bg-primary-brand text-white shadow-md font-bold rounded-3xl hover:scale-105 hover:bg-secondary-brand hover:cursor-pointer">
         {{ getTranslation('FORM_STEP_SUMMARY_MODIFY') }}
       </button>
