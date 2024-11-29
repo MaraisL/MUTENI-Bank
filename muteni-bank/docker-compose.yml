@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  muteni-bank:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:80' # Mapper le port 80 du conteneur sur le port 8080 de l'hôte
+    restart: always
