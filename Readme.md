@@ -1,6 +1,6 @@
 # Muteni-bank
 
-Multi step form project
+Multi step form project, with Angular 18 and Tailwind
 
 ## APP
 
@@ -11,7 +11,6 @@ Multi step form project
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-4.png?raw=true)
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-5.png?raw=true)
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-6.png?raw=true)
-![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-7.png?raw=true)
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-summary-step.png?raw=true)
 
 ## Getting started
