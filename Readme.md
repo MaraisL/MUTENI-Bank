@@ -2,8 +2,22 @@
 
 Multi step form project
 
+## APP
+
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/homepage.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-1.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-2.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-3.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-4.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-5.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-6.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-7.png?raw=true)
+![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-summary-step.png?raw=true)
+
 ## Getting started
+
 ### Versions
+
 ```bash
 Angular CLI: 18.2.11
 Node: 22.11.0
@@ -25,20 +39,23 @@ rxjs                            7.8.1
 typescript                      5.5.4
 zone.js                         0.14.10
 ```
+
 ### Commands
 
 #### Run dev environnement
+
 ```bash
 cd muteni-bank
-npm install 
+npm install
 ng serve
 ```
 
-#### Run Docker 
+#### Run Docker
+
 ```bash
 cd muteni-bank
-npm install 
+npm install
 ng build
-docker build -t muteni-bank .
-docker run -d -p 80:80 muteni-bank
+docker-compose build
+docker-compose up
 ```
