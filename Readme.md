@@ -61,6 +61,13 @@ docker-compose build
 docker-compose up
 ```
 
+#### Deploy on GitHub Pages
+
+```bash
+cd muteni-bank
+ng deploy --base-href /MUTENI-Bank/
+```
+
 ## Customer Journey
 
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/homepage.png?raw=true)
