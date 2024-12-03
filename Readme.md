@@ -12,6 +12,7 @@ Multi step form project, with Angular 18 and Tailwind
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-5.png?raw=true)
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-step-6.png?raw=true)
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/form-summary-step.png?raw=true)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMaraisL%2FMUTENI-Bank.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FMaraisL%2FMUTENI-Bank?ref=badge_shield)
 
 ## Getting started
 
@@ -58,3 +59,7 @@ ng build
 docker-compose build
 docker-compose up
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMaraisL%2FMUTENI-Bank.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FMaraisL%2FMUTENI-Bank?ref=badge_large)
