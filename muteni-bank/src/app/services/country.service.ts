@@ -9,10 +9,10 @@ export class CountryService {
   constructor(private http: HttpClient) {}
 
   getCountries(): Observable<any[]> {
-    return this.http.get<any[]>('/assets/countries.json');
+    return this.http.get<any[]>('./assets/countries.json');
   }
 
   getTaxCountries(): Observable<any[]> {
-    return this.http.get<any[]>('/assets/countries-tax.json');
+    return this.http.get<any[]>('./assets/countries-tax.json');
   }
 }
