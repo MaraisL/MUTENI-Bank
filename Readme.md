@@ -1,7 +1,10 @@
 # Muteni-bank
 
 Multi step form project, with Angular 18 and Tailwind
-[App link](maraisl.github.io/MUTENI-Bank/)
+
+<p align="center">
+  <strong><a href="https://maraisl.github.io/MUTENI-Bank/profil">App link</a></strong>
+</p>
 
 ## APP
 <p align="center">
@@ -9,6 +12,7 @@ Multi step form project, with Angular 18 and Tailwind
     <img src="https://skillicons.dev/icons?i=angular,tailwind,css,html,ts,docker,git,github" />
   </a>
 </p>
+
 ![alt text](https://github.com/MaraisL/MUTENI-Bank/blob/main/assets/app-scheme.png?raw=true)
 
 ## Getting started
